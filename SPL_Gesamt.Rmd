@@ -1,0 +1,43 @@
+---
+title: "SPL_Gesamt"
+author: "Mohamed Megahed""
+date: '`r format(Sys.time(), ''%d %B, %Y'')`'
+output:
+  html_document: default
+  pdf_document: default
+subtitle: "Statistical Programming Languages - SoSe 2019"
+---
+
+```{r setup, include=FALSE}
+getwd()
+setwd("Users/mega/GitHubDsk/SPL")
+# setwd("~/Dropbox/Uni/HU/Module/SS19Fi/1-StatProg/Datasets")
+# setwd("C://Your/own/path")
+# will knit with errors (to change: errors = TRUE)
+# will knit without results, to show: results = 'show'
+solution <- FALSE
+if(solution == FALSE){
+knitr::opts_chunk$set(error = TRUE, echo = FALSE, results = 'show', message = FALSE, warning = FALSE, fig.keep = 'none', cache = FALSE)
+}
+options(repos=c(CRAN = "https://cran.uni-muenster.de/"))
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
