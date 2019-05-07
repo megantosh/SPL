@@ -29,13 +29,12 @@ options(repos=c(CRAN = "https://cran.uni-muenster.de/"))
 
 ## Outline (For Consultation Hour)
 
-- Find a data set you are interested in and think of a research
-- question that can be answered with this data set.
+- Find a data set you are interested in
+- and think of a research question that can be answered with this data set.
 - Write an R script that reads in your data set.
 - Email the R file and provide the data set to us (e.g. via email,
 Dropbox link).
-- Provide some descriptive plots and ideas for statistical
-method
+- Provide some descriptive plots and ideas for statistical method
 
 
 <!-- This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>. -->
@@ -67,9 +66,13 @@ The provided data is free to use. Please credit Europe Elects upon use.
 
 http://www.europarl.europa.eu/about-parliament/en/organisation-and-rules/organisation/political-groups
 
+http://meuz.eu/news/political-groups-european-parliament/
 
-Group of the European People's Party (Christian Democrats)
- 
+```{r}
+parties <-c("EEP")
+```
+EEP: European People's Party (Christian Democrats)
+
 
 
 ## Dataset
@@ -100,6 +103,12 @@ Group of the European People's Party (Christian Democrats)
 ## Dataset Preprocessing
  
 ## Research Question
+
+* Is there a correlation between the changes in the votes of the EPP and of the ENF/EFDD. Jan 2018 and may 2019 across FR, DE, ES, IT did the polling change towards a more conservative (No UK, too complex!)
+* in correlation with (e.g. political) events, attacks etc.
+
+## Alternative Questions
+
 * does constituency (e.g. UK) vs proportional (e.g. DE) voting change voters’ behaviours?
     * National vs. EU
 * how does CDU compare with other EU countries in EPP's numbers?
@@ -107,7 +116,7 @@ Group of the European People's Party (Christian Democrats)
     * more complex because diff. political grouping (naming. some are libs, others are …)
     * How can that be reverbalized in: “is a region becoming more conservative”, since increase in no. of voters as well as shifting voters numbers are both indicators to an increase in conservative parties
 
-smaller questions on  dataset
+# More in-depth questions on  dataset
 * which sources are the most accurate in their predictions? (e.g. yougov)
 * when is the most accurate time for the data? is there a pattern, i.e. a certain time frame is more indicative than another? e.g. can we say 3 months ahead of elections is more representative than 4 days before?
 
@@ -115,7 +124,13 @@ smaller questions on  dataset
 * how many countries to compare?
 * Comparing overall results and then of specific sample countries? or all Member States' results with each
  
+For Paper (DSet Descr): 
+*  which national party is who on EU level
+* some data is broken up into regions (BE, UK)
+* Some parties have no representation / some repr. have no parties: https://europeelects.eu/european-union/bulgaria/
+* what is the best way through lists / concats to represent the parties
+ 
+ 
 ## Conclusion
 * EU Elections and Brexit 
-
 * dataset time frome too limited?
