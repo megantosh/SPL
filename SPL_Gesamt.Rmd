@@ -1,18 +1,23 @@
 ---
-title: "SPL_Gesamt"
-author: "Mohamed Megahed""
-date: '`r format(Sys.time(), ''%d %B, %Y'')`'
+title: The Rise of The Far Right in Europe 
+author: Mohamed Megahed
+subtitle: Statistical Programming Languages - SoSe 2019
 output:
-  html_document: default
-  pdf_document: default
-subtitle: "Statistical Programming Languages - SoSe 2019"
+  html_document: 
+    toc: true
+    toc_float:
+        collapsed: false
+        smooth_scroll: false
+  pdf_document:
+    toc: true
+    toc_depth: 2
+    number_sections: true
 ---
 
 ```{r setup, include=FALSE}
 getwd()
-setwd("Users/mega/GitHubDsk/SPL")
 # setwd("~/Dropbox/Uni/HU/Module/SS19Fi/1-StatProg/Datasets")
-# setwd("C://Your/own/path")
+# set to "Volume://Your/own/path"
 # will knit with errors (to change: errors = TRUE)
 # will knit without results, to show: results = 'show'
 solution <- FALSE
@@ -22,22 +27,95 @@ knitr::opts_chunk$set(error = TRUE, echo = FALSE, results = 'show', message = FA
 options(repos=c(CRAN = "https://cran.uni-muenster.de/"))
 ```
 
-## R Markdown
+## Outline (For Consultation Hour)
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+- Find a data set you are interested in and think of a research
+- question that can be answered with this data set.
+- Write an R script that reads in your data set.
+- Email the R file and provide the data set to us (e.g. via email,
+Dropbox link).
+- Provide some descriptive plots and ideas for statistical
+method
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
 
-```{r cars}
-summary(cars)
-```
+<!-- This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>. -->
 
-## Including Plots
+<!-- When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this: -->
 
-You can also embed plots, for example:
+<!-- ```{r cars} -->
+<!-- summary(cars) -->
+<!-- ``` -->
 
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
+<!-- You can also embed plots, for example: -->
+<!-- ```{r pressure, echo=TRUE} -->
+<!-- plot(pressure) -->
+<!-- ``` -->
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+<!-- Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot. -->
+
+## Introduction
+
+The European Parliament (EP) is the only parliamentary institution of the European Union (EU) that is directly elected by EU citizens aged 18 or older. Together with the European Commission and the Council of the European Union ('the Council', which should not be confused with the European Council and the Council of Europe) it exercises the tripartite legislative function of the EU. The Parliament is composed of 751 members (MEPs), that is intended to become 705 starting from the 2019–2024 legislature because of specific provisions adopted about Brexit, who represent the second-largest democratic electorate in the world (after the Parliament of India) and the largest trans-national democratic electorate in the world (375 million eligible voters in 2009).
+
+The next elections to the European Parliament will be held 23–26 May 2019. Following the withdrawal of the United Kingdom from the EU on the current shedule, the number of Members of the European Parliament (MEPs) is set to be reduced from 751 to 705.
+
+
+The provided data is free to use. Please credit Europe Elects upon use.
+
+    
+## Political Groups in the EU Parliament (Parties) 
+
+http://www.europarl.europa.eu/about-parliament/en/organisation-and-rules/organisation/political-groups
+
+
+Group of the European People's Party (Christian Democrats)
+ 
+
+
+## Dataset
+
+- Polls go back to January 2018.
+
+
+- **File Names:** with αα being the country’s ISO 3166-1 alpha-2 code:
+    - **αα.csv** contain all polls registered in the database
+    - The files named **αα-E.csv** contain the polls for European elections only
+    - the files named **αα-N.csv** contain the national polls only.
+  
+- **Variables:** CSV file Format is as follows:
+    - **Polling firm:** The name of the polling firm
+    - **Commissioners:** The name of the commissioners, or empty if none
+    - **Fieldwork Start:** Start date for the fieldwork
+    - **Fieldwork End:** End date for the fieldwork
+    - **Scope:** Scope for the poll, either National or European
+    - **Sample Size:** Sample size for the poll, either a number or Not Available if not available
+    - **Sample Size Qualification:** Either Provided if the sample size was provided by the polling firm, or Estimated/Assumed if it was not provided by estimated or assumed, or N/A if the sample size was not available
+    - **Participation:** Either a percentage for the participation, or Not Available if not available
+    - **Precision:** Either a percentage for the precision of the results, or Seats if the results are given in terms of seats
+    - **Party Names:** As a percentage, number of seats, or Not Available if not available
+    - **Other:** As a percentage, number of seats, or Not Available if not available
+    
+## Dataset Description
+
+## Dataset Preprocessing
+ 
+## Research Question
+* does constituency (e.g. UK) vs proportional (e.g. DE) voting change voters’ behaviours?
+    * National vs. EU
+* how does CDU compare with other EU countries in EPP's numbers?
+* "the rise of the far right”: are right-wing parties 'stealing' from the other parties or are their voters  only becoming more?
+    * more complex because diff. political grouping (naming. some are libs, others are …)
+    * How can that be reverbalized in: “is a region becoming more conservative”, since increase in no. of voters as well as shifting voters numbers are both indicators to an increase in conservative parties
+
+smaller questions on  dataset
+* which sources are the most accurate in their predictions? (e.g. yougov)
+* when is the most accurate time for the data? is there a pattern, i.e. a certain time frame is more indicative than another? e.g. can we say 3 months ahead of elections is more representative than 4 days before?
+
+* how to explain discrepancies policywise
+* how many countries to compare?
+* Comparing overall results and then of specific sample countries? or all Member States' results with each
+ 
+## Conclusion
+* EU Elections and Brexit 
+
+* dataset time frome too limited?

@@ -1,15 +1,47 @@
 ---
-title: "Untitled"
-output: pdf_document
+title: Playground
+author: M. Megahed
+subtitle: Statistical Programming Languages - SoSe 2019
+output:
+  html_document: 
+    toc: true
+    toc_float:
+        collapsed: false
+        smooth_scroll: false
+  pdf_document:
+    toc: true
+    toc_depth: 2
+    number_sections: true
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+# will knit with errors (to change: errors = TRUE)
+# will knit without results, to show: results = 'show'
+solution <- FALSE
+if(solution == FALSE){
+knitr::opts_chunk$set(error = TRUE, echo = FALSE, results = 'show', message = FALSE, warning = FALSE, fig.keep = 'none', cache = FALSE)
+}
+options(repos=c(CRAN = "https://cran.uni-muenster.de/"))
 ```
+
+<!-- 
+  YAML stuff
+  
+  HTML Properties:
+  https://bookdown.org/yihui/rmarkdown/html-document.html 
+
+  PDF and LaTeX
+  https://bookdown.org/yihui/rmarkdown/pdf-document.html
+  
+  date: '`r format(Sys.time(), ''%d %B, %Y'')`'
+
+-->
+
+
 
 ## R Markdown
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+This is an R \alpha Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
 
 When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
 
