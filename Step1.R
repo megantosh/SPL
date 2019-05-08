@@ -49,7 +49,7 @@ GUE_NGL_members <- c("","")
 # 
 G_EFA_members <- c("","")
 # 
-SandD_members <- c("","")
+SandD_members <- c(,"")
 # 
 ALDE_members <- c("","")
 # 

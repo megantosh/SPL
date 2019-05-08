@@ -1,5 +1,5 @@
 ---
-title: The Rise of The Far Right in Europe 
+title: Electoral Behaviour in Europe 
 author: Mohamed Megahed
 subtitle: Statistical Programming Languages - SoSe 2019
 output:
