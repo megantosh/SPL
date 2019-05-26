@@ -1,0 +1,41 @@
+#!/bin/bash
+
+cd ~/git/eopaod/src
+
+function convert_country {
+  echo "Converting $1..."
+  ruby psv2csv.rb $1
+  ruby psv2svg.rb $1
+}
+
+convert_country at
+convert_country be-bru
+convert_country be-vlg
+convert_country be-wal
+convert_country bg
+convert_country cy
+convert_country cz
+convert_country de
+convert_country dk
+convert_country ee
+convert_country es
+convert_country fi
+convert_country fr
+convert_country gb-gbn
+convert_country gb-nir
+convert_country gr
+convert_country hr
+convert_country hu
+convert_country ie
+convert_country it
+convert_country lt
+convert_country lu
+convert_country lv
+convert_country mt
+convert_country nl
+convert_country pl
+convert_country pt
+convert_country ro
+convert_country se
+convert_country si
+convert_country sk
