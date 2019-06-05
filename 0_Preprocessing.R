@@ -87,14 +87,15 @@ for(country_suffix in eu_country_codes){
     # add "-N" or "-E" before ".csv" for national or european subtables
     import_path <- paste(import_path_prefix, country_suffix, ".csv", sep = "")
     # using readr::read_csv as a better version of read.csv () - caution: outputs tibble, which inherit from data.frame
-    # c = character, i = integer, n = number, d = double, l = logical, f = factor, D = date, T = date time, t = time, ? = guess, or _/- to skip the column.
+    # compact: c = char, i = int, n = num, d = dbl, l = bool, f = factor, D = date, T = date/time, t = time, ? = guess, _/- = skip col.
     data_list <- c(data_list, lapply(import_path, read_csv, na = c("", "NA", "N.A.", "NaN", "Not Available"),
                                      col_types = cols(`Polling Firm` = col_factor(),
                                        `Commissioners` = col_factor(),
                                        `Scope` = col_factor(),
                                        `Sample Size Qualification` = col_factor(),
+                                       `Precision` = col_number(), # converts to char bec of '%'
                                        `Participation` = col_number()
-                                     )))
+                                       )))
     # alternatively use the line below: read.csv(..., row.names = NULL) in order not to collide with 'cy.csv'
     # data_list <- c(data_list,lapply(import_path, read.csv, row.names = NULL))
     # TODO maybe add here as.data.frame([count])
@@ -109,7 +110,7 @@ names(data_list) <- eu_country_codes[!eu_country_codes %in% skipped_eu_country_c
 
 
 # extract first part of the tibble (common part accross all CSVs) into summary_by_country
-# extract second part of the tibble (parties-dependent part) into 
+# extract second part of the tibble (parties-dependent part) into parties_by_country
 # add country code in first row in both structures
 for(country_suffix in eu_country_codes){
   if(!country_suffix %in% skipped_eu_country_codes){
@@ -127,12 +128,13 @@ for(country_suffix in eu_country_codes){
     parties_by_country[[country_suffix]] <- data_list[[country_suffix]][-(1:9)]
     parties_by_country[[country_suffix]] <- add_column(parties_by_country[[country_suffix]], country = country_suffix, .before = 1)
     #TODO:ASK: use instead: lapply(data_list[[country_suffix]], add_column, parties_by_country[[country_suffix]], country = country_suffix)
-    
-    
+    parties_by_country[[country_suffix]] <- lapply(parties_by_country[[country_suffix]], gsub, pattern = "%", replacement='' ) # remove "%"
+    parties_by_country[[country_suffix]] <- lapply(parties_by_country[[country_suffix]][-1], as.numeric) # convert all but first row to numbers
+    print(str(parties_by_country[[country_suffix]]))
   }
 }
 
----
+# ---
 
 class(data_list)
 str(data_list)
@@ -231,15 +233,14 @@ comparison_df <- data.frame()
 
 transform_country_csv <- function(input_data_frame) {
   # although some NAs are discovered by dplyr, the word "Not Available" for instance is not - this is a fix
-  input_data_frame <- lapply(input_data_frame, gsub, pattern = "Not Available|NA|N.A.|N/A", ignore.case = TRUE , replacement= NA)
-  input_data_frame <- lapply(input_data_frame, gsub, pattern = "%", replacement='' )
+  # input_data_frame <- lapply(input_data_frame, gsub, pattern = "Not Available|NA|N.A.|N/A", ignore.case = TRUE , replacement= NA)
+  # input_data_frame <- lapply(input_data_frame, gsub, pattern = "%", replacement='' )
   # readr takes care of that - superfluous
   # input_data_frame$Fieldwork.Start <- as.Date(as.character(input_data_frame$Fieldwork.Start))
   # input_data_frame$Fieldwork.End <- as.Date(as.character(input_data_frame$Fieldwork.End))
-  input_data_frame$duration <- as.numeric(input_data_frame$Fieldwork.End - input_data_frame$Fieldwork.Start)
+  # input_data_frame$duration <- as.numeric(input_data_frame$Fieldwork.End - input_data_frame$Fieldwork.Start)
   # input_data_frame$Sample.Size <- as.character(input_data_frame$Sample.Size)
   input_data_frame
-
   str(input_data_frame)
   head(input_data_frame)
   return(input_data_frame)
