@@ -3,21 +3,25 @@
 # Statistical Programming Languages - SoSe 2019
 
 
+# # # # # Imports # # # # #
 
+
+# library(tidyverse)
+library(dplyr)
+library(readr)
+library(stats)
+
+
+# # # # # Variables # # # # #
 
 # Sorted as adopted from http://publications.europa.eu/code/pdf/370000en.htm
-## Greece is using 'gr' and not 'el (Hellenic Republic)
+## Greece is 'gr' and not 'el (Hellenic Republic)
 eu_country_code <-c("be", "bg", "cz", "dk", "de", "ee",
-                     "ie", "gr", "es", "fr", "cr", "it", "cy", "lv", "lt", "lu", "hu",
-                     "mt", "nl", "at", "pl", "pt", "ro", "si", "sk", "fi", "se", "uk")
+                     "ie", "gr", "es", "fr", "hr", "it", "cy", "lv", "lt", "lu", "hu",
+                     "mt", "nl", "at", "pl", "pt", "ro", "si", "sk", "fi", "se", "gb-gbn")
 names(eu_country_code) <- c("Belgium", "Bulgaria", "Czechia", "Denmark", "Germany", "Estonia",
                             "Ireland", "Greece", "Spain", "France", "Croatia", "Italy", "Cyprus", "Latvia", "Lithuania", "Luxembourg", "Hungary",
-                            "Malta", "Netherlands", "Austria", "Poland", "Portugal", "Romania", "Slovenia", "Slovakia", "Finland", "Sweden", "United Kingdom") 
-
-# derrived from analysis of political orientations of EU Parties (EUP)
-orientation_scale_2014 <- c("left-wing", "green", "center-left", "liberal", "centre-right", "national-conservative", "eurosceptic-populist", "right-wing", "unaffiliated", "non-inscrit")
-orientation_scale_2019 <- c("left-wing", "green", "center-left", "UnAff1: eurofederalist", "liberal", "centre-right", "national-conservative", "eurosceptic-populist", "right-wing", "unaff2: M5S", "UnAff3: BREXIT", "non-inscrit")
-
+                            "Malta", "Netherlands", "Austria", "Poland", "Portugal", "Romania", "Slovenia", "Slovakia", "Finland", "Sweden", "United Kingdom (GB+NIr)") 
 
 # EU Parliament Political Groups sorted by affiliation (extreme left to extreme right)
 eup_pol_group_2014 <- c("GUE/NGL", "G/EFA", "S&D", "ALDE", "EEP", "ECR", "EFDD", "ENF/EAPN", "NI", "UnAff")
@@ -25,8 +29,6 @@ eup_pol_group_2014 <- c("GUE/NGL", "G/EFA", "S&D", "ALDE", "EEP", "ECR", "EFDD",
 names(eup_pol_group_2014) <-c ("Eur. United Left - Nordic Green Left", "Greens / Eur. Free All.", "Socialists & Democrats",
                                "All. of Liberals and Democrats", "Eur. People's Party (Chris. Democrats)", "Eur. Conservatives & Reformists", 
                                "Euro. Freedom & Direct Democracy", "Nations & Freedom / Eur. All. of People's & Nations", "Non-Inscrits", "Unaffiliated")
-
-
 
 # Using extended names for formaility
 names(eup_pol_group_2014) <- c("Confederal Group of the European United Left - Nordic Green Left",
@@ -42,6 +44,10 @@ names(eup_pol_group_2019) <- c("Eur. United Left - Nordic Green Left", "Greens /
                                "All. of Liberals and Democrats", "Eur. People's Party (Chris. Democrats)", "Eur. Conservatives & Reformists", 
                                "Euro. Freedom & Direct Democracy", "Nations & Freedom / Eur. All. of People's & Nations", "Non-Inscrits", "Unaffiliated")
 
+
+# derrived from analysis of political orientations of EU Parties (EUP)
+orientation_scale_2014 <- c("left-wing", "green", "center-left", "liberal", "centre-right", "national-conservative", "eurosceptic-populist", "right-wing", "unaffiliated", "non-inscrit")
+orientation_scale_2019 <- c("left-wing", "green", "center-left", "UnAff1: eurofederalist", "liberal", "centre-right", "national-conservative", "eurosceptic-populist", "right-wing", "unaff2: M5S", "UnAff3: BREXIT", "non-inscrit")
 
 
 
@@ -69,9 +75,6 @@ it_parties <- c("SI", "PaP", "PD", "+E", "MDP", "FI.it", "FdI", "M5S", "LEGA" )
 names(it_parties) <- c("Sinistra Italiana", "Potere al Popolo", "Partito Democratico", "Più Europa", "Articolo 1", "Forza Italia", "Fratelli d'Italia",
                        "Movimento 5 Stelle", "Lega")
 
-
-
-
 #spain
 
 #greece
@@ -79,7 +82,7 @@ names(it_parties) <- c("Sinistra Italiana", "Potere al Popolo", "Partito Democra
 #netherlands
 
 
-
+# nach bundesland!!!
 
 
 
@@ -96,9 +99,95 @@ count_eup_pol_group_2014 <-length(eup_pol_group_2014)
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 # step 1: import dataset
 print("Project Working Directory: "); getwd()      
 
 import_path_prefix <- "datasets/eopaod-master/docs/"
-import_path_de <- paste(import_path_prefix, "at-N.csv", sep = "")
+for(country_suffix in eu_country_code){
+  if(country_suffix == "be"){
+    next;
+  } else {
+  import_path <- paste(import_path_prefix, country_suffix, ".csv", sep = "")
+  read.csv(import_path, row.names = NULL)
+  print(paste("imported ", country_suffix , " from ", import_path))
+  }
+}
+
+
+
+import_path_at <- paste(import_path_prefix, "at-N.csv", sep = "")
 read.csv(import_path_de)
+
+comparison_countries <- c("at", "de", "fr", "it")
+comparison_df <- data.frame()
+
+for (i in 1:length(comparison_countries)) {
+  comparison_df <- read.csv(paste(import_path_prefix, comparison_countries[i], "-n.csv", sep =""))
+}
+
+
+
+detach("package:dplyr")  # Unload dplyr
+detach("package:stats")  
+
+
+
+
+
+
+transform_country_csv <- function(input_data_frame) {
+  input_data_frame <- lapply(input_data_frame, gsub, pattern = "Not Available|NA|N.A.|N/A", ignore.case = TRUE , replacement= NA)
+  input_data_frame <- lapply(input_data_frame, gsub, pattern = "%", replacement='' )
+  
+  input_data_frame$Fieldwork.Start <- as.Date(as.character(input_data_frame$Fieldwork.Start))
+  input_data_frame$Fieldwork.End <- as.Date(as.character(input_data_frame$Fieldwork.End))
+  input_data_frame$duration <- as.numeric(input_data_frame$Fieldwork.End - input_data_frame$Fieldwork.Start)
+  input_data_frame$Sample.Size <- as.character(input_data_frame$Sample.Size)
+  
+
+  str(input_data_frame)
+  head(input_data_frame)
+  return(input_data_frame)
+}
+
+
+fr_trans <- as.data.frame(transform_country_csva(FR_data))
+
+
+class(fr_trans)
+str(fr_trans)
+
+
+FR_data
+
+fr_trans <- as.data.frame(transform_country_csva())
+
+
+class(fr_trans)
+str(fr_trans)
+str(fr_trans)
+
+
+
+
+
+if(DE_data$Sample.Size == "NA" | "Not Available" | "N/A"){
+  DE_data$Sample.Size <- median(DE_data$Sample.Size, na.rm = TRUE)
+}
+
+
+DE_data_readable <- DE_data %>%
+  Fieldwork.Start = as.Date(as.character(Fieldwork.Start))
+
+DE_data_readable

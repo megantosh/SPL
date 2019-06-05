@@ -1,9 +1,12 @@
 #Dependencies
 if(!require("RCurl")) install.packages("RCurl"); library(RCurl) # Curl from HTTPS
+if(!require("XML")) install.packages("XML"); library(XML); library(methods) # Convert XML to DataFrames
+
+if(!require("ggparliament")) install.packages("ggparliament"); library(ggparliament) # Graph Visualisations
 
 getwd ()
 
-#dataset files
+#dataset files - endpoint path
  
 FR_data <-read.csv(text = getURL("https://filipvanlaenen.github.io/eopaod/fr.csv"))
 FR_E_data <- read.csv(text = getURL("https://filipvanlaenen.github.io/eopaod/fr-E.csv"))
@@ -37,6 +40,15 @@ summary(IT_N_data)
 summary(ES_data)
 summary(ES_E_data)
 summary(ES_N_data)
+
+
+xmlresults <- xmlParse("2014electionsresults.xml")# xmlToDataFrame(doc = "2014electionsresults.xml")
+xmlToList <- (xmlresults)
+
+DE_electionresults <- as.data.frame(xmlToList[["root"]][["countryresults"]][["country"]])
+
+
+
 
 
 # variable Declarations

@@ -1,5 +1,5 @@
 ---
-title: Electoral Behaviour in Europe 
+title: Polling Behaviour in Europe 
 author: Mohamed Megahed
 subtitle: Statistical Programming Languages - SoSe 2019
 output:
@@ -52,16 +52,36 @@ Dropbox link).
 
 <!-- Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot. -->
 
+## Abstract
+
+This paper tries to address the accuracy of polling behaviour across the European Union by comparing the polling results at different times within the frame of 16 months prior to the 2019 elections result. 
+
+
 ## Introduction
 
-The European Parliament (EP) is the only parliamentary institution of the European Union (EU) that is directly elected by EU citizens aged 18 or older. Together with the European Commission and the Council of the European Union ('the Council', which should not be confused with the European Council and the Council of Europe) it exercises the tripartite legislative function of the EU. The Parliament is composed of 751 members (MEPs), that is intended to become 705 starting from the 2019–2024 legislature because of specific provisions adopted about Brexit, who represent the second-largest democratic electorate in the world (after the Parliament of India) and the largest trans-national democratic electorate in the world (375 million eligible voters in 2009).
+The European Parliament (EP) is the only parliamentary institution of the European Union (EU) directly elected by EU citizens. Together with the European Commission and the Council of the European Union ('the Council', which should not be confused with the European Council and the Council of Europe) it exercises the tripartite legislative function of the EU. The Parliament is composed of 751 members (MEPs), that is intended to become 705 starting from the 2019–2024 legislature because of specific provisions adopted about Brexit, who represent the second-largest democratic electorate in the world (after the Parliament of India) and the largest trans-national democratic electorate in the world (375 million eligible voters in 2009).
 
 The next elections to the European Parliament will be held 23–26 May 2019. Following the withdrawal of the United Kingdom from the EU on the current shedule, the number of Members of the European Parliament (MEPs) is set to be reduced from 751 to 705.
 
 
 The provided data is free to use. Please credit Europe Elects upon use.
 
-    
+
+
+This paper tries to address the accuracy of polling behaviour across the European Union by comparing the polling results at different times within the frame of 16 months prior to the 2019 elections result. 
+
+
+A bit of information:
+- national parties form groupings in the EU parliament. These were not announced yet:
+"as many national parties have refused to make EU Parliament group arrangements ahead of the election"
+" Ahead of the election, national parties are conscious about not tying the knot with the wrong partner across borders and risk negative press coverage at home."
+
+"Volatility in Europe has increased, while loyal voters are becoming the exception, no longer the rule."
+you need to "bring together MEPs from at least seven countries, " in order to form a grouping
+
+
+
+
 ## Political Groups in the EU Parliament (Parties) 
 
 http://www.europarl.europa.eu/about-parliament/en/organisation-and-rules/organisation/political-groups
@@ -101,6 +121,8 @@ EEP: European People's Party (Christian Democrats)
 ## Dataset Description
 
 ## Dataset Preprocessing
+
+- da wo die sample size nicht bekaonnt ist, z.b. Forsa am 2018-02-05	2018-02-09, wird der Eintrag gelöscht statt normiert / average, um die accuracy zu
  
 ## Research Question
 
@@ -134,3 +156,6 @@ For Paper (DSet Descr):
 ## Conclusion
 * EU Elections and Brexit 
 * dataset time frome too limited?
+
+## References
+Dataset acquired via: https://filipvanlaenen.github.io/eopaod/ bzw. https://github.com/filipvanlaenen/eopaod
