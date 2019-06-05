@@ -12,6 +12,7 @@
 
 # library(tidyverse)
 library(dplyr)
+library(tibble)
 library(readr)
 library(stats)
 
@@ -64,7 +65,7 @@ names(europarties_2019) <- europarties_2019_names
 names(mep_seats_by_country) <- eu_country_codes
 
 # global stats  -----------------------------------------------------------------
-count_mep_seats <- sum(seats_by_country)
+count_mep_seats <- sum(mep_seats_by_country)
 count_eu_countries <- as.numeric(length(eu_country_codes))
 count_europarties_2014 <-as.numeric(length(europarties_2014))
 
@@ -81,14 +82,19 @@ data_list <- summary_by_country <- parties_by_country <- list() # TODO:ASK is ok
 count <- 1 
 for(country_suffix in eu_country_codes){
   # skips in case you want to exclude a certain data frame not currently present (in proper format) in folder 
-  if(country_suffix %in% skipped_eu_country_codes){
-    next; # TODO:ASK does that need to go onto one line?
-  } else {
+  if(!country_suffix %in% skipped_eu_country_codes){
     count <- count + 1
     # add "-N" or "-E" before ".csv" for national or european subtables
     import_path <- paste(import_path_prefix, country_suffix, ".csv", sep = "")
     # using readr::read_csv as a better version of read.csv () - caution: outputs tibble, which inherit from data.frame
-    data_list <- c(data_list, lapply(import_path, read_csv))
+    # c = character, i = integer, n = number, d = double, l = logical, f = factor, D = date, T = date time, t = time, ? = guess, or _/- to skip the column.
+    data_list <- c(data_list, lapply(import_path, read_csv, na = c("", "NA", "N.A.", "NaN", "Not Available"),
+                                     col_types = cols(`Polling Firm` = col_factor(),
+                                       `Commissioners` = col_factor(),
+                                       `Scope` = col_factor(),
+                                       `Sample Size Qualification` = col_factor(),
+                                       `Participation` = col_number()
+                                     )))
     # alternatively use the line below: read.csv(..., row.names = NULL) in order not to collide with 'cy.csv'
     # data_list <- c(data_list,lapply(import_path, read.csv, row.names = NULL))
     # TODO maybe add here as.data.frame([count])
@@ -99,23 +105,38 @@ for(country_suffix in eu_country_codes){
 }
 count <- NULL #reset counter to avoid errors in reruns
 # TODO: change index to exclude skippable countries
-names(data_list) <- eu_country_codes[2:28] #starts at 2 ignoring Belgium 
+names(data_list) <- eu_country_codes[!eu_country_codes %in% skipped_eu_country_codes] # starts at 2 ignoring Belgium 
 
 
-# extract first part of the table (common part)
+# extract first part of the tibble (common part accross all CSVs) into summary_by_country
+# extract second part of the tibble (parties-dependent part) into 
+# add country code in first row in both structures
 for(country_suffix in eu_country_codes){
-  if(country_suffix %in% skipped_eu_country_codes){
-    next;
-  } else {
-    print(country_suffix)
-  summary_by_country[[country_suffix]] <- data_list[[country_suffix]][1:9]
-  parties_by_country[[country_suffix]] <- data_list[[country_suffix]][-(1:9)]
-  # add_column(parties_by)
+  if(!country_suffix %in% skipped_eu_country_codes){
+    print(paste("table split for", names(eu_country_codes[eu_country_codes==country_suffix])))
+    summary_by_country[[country_suffix]] <- data_list[[country_suffix]][1:9]
+    summary_by_country[[country_suffix]] <- add_column(summary_by_country[[country_suffix]], country = country_suffix, .before = 1)
+    summary_by_country[[country_suffix]] <- add_column(summary_by_country[[country_suffix]], duration =
+                                                         summary_by_country[[country_suffix]]$`Fieldwork End` 
+                                                       - summary_by_country[[country_suffix]]$`Fieldwork Start`)
+    # cols_vec <- c(summary_by_country[[country_suffix]]$`Polling Firm`, summary_by_country[[country_suffix]]$`Commissioners`, 
+                  # summary_by_country[[country_suffix]]$`Scope`, summary_by_country[[country_suffix]]$`Sample Size Qualification`,
+                  # summary_by_country[[country_suffix]]$`Participation`)
+    # factor(cols_vec)
+    
+    parties_by_country[[country_suffix]] <- data_list[[country_suffix]][-(1:9)]
+    parties_by_country[[country_suffix]] <- add_column(parties_by_country[[country_suffix]], country = country_suffix, .before = 1)
+    #TODO:ASK: use instead: lapply(data_list[[country_suffix]], add_column, parties_by_country[[country_suffix]], country = country_suffix)
+    
+    
   }
 }
 
+---
+
 class(data_list)
 str(data_list)
+summary(data_list)
 head(data_list)
 tail(data_list)
 View(data_list)
@@ -149,7 +170,7 @@ View(data_list)
 ## TODO: put common part into data table with one big list incl. country
 ## TODO: then take out the party names [9:-1] and put them into a political affiliation
 
-
+# TODO: filter scope to european/national
 
 # TODO: derive party names from col names
 
@@ -206,17 +227,18 @@ comparison_df <- data.frame()
 
 
 
-
+# Function: ------------
 
 transform_country_csv <- function(input_data_frame) {
+  # although some NAs are discovered by dplyr, the word "Not Available" for instance is not - this is a fix
   input_data_frame <- lapply(input_data_frame, gsub, pattern = "Not Available|NA|N.A.|N/A", ignore.case = TRUE , replacement= NA)
   input_data_frame <- lapply(input_data_frame, gsub, pattern = "%", replacement='' )
-  
-  input_data_frame$Fieldwork.Start <- as.Date(as.character(input_data_frame$Fieldwork.Start))
-  input_data_frame$Fieldwork.End <- as.Date(as.character(input_data_frame$Fieldwork.End))
+  # readr takes care of that - superfluous
+  # input_data_frame$Fieldwork.Start <- as.Date(as.character(input_data_frame$Fieldwork.Start))
+  # input_data_frame$Fieldwork.End <- as.Date(as.character(input_data_frame$Fieldwork.End))
   input_data_frame$duration <- as.numeric(input_data_frame$Fieldwork.End - input_data_frame$Fieldwork.Start)
-  input_data_frame$Sample.Size <- as.character(input_data_frame$Sample.Size)
-  
+  # input_data_frame$Sample.Size <- as.character(input_data_frame$Sample.Size)
+  input_data_frame
 
   str(input_data_frame)
   head(input_data_frame)
@@ -225,20 +247,8 @@ transform_country_csv <- function(input_data_frame) {
 
 
 fr_trans <- as.data.frame(transform_country_csva(FR_data))
-
-
-class(fr_trans)
-str(fr_trans)
-
-
-FR_data
-
 fr_trans <- as.data.frame(transform_country_csva())
 
-
-class(fr_trans)
-str(fr_trans)
-str(fr_trans)
 
 
 
