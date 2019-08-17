@@ -100,13 +100,22 @@ print(paste("Project Working Directory: ", getwd()))
 
 # import all country CSVs from EOPaOD into one big list of tibbles (data frames)
 import_path_prefix <- "datasets/"
-# initializing lists to store data frames of poll data and iterate over it by country 
+# initializing lists to store data frames of poll data and iterate over it by country
 # init multiple vars at once instead of an extra line for each variable
 # explaining variable functionality further below with "VARNAME: <var>"
-polls_by_ctry_list <- results_by_ctry_list <- summary_by_country <- 
-  parties_by_country <- parties <- list() 
-# VARNAME: static_data includes the consistent part of EOPaOD (i.e. excl. parties) 
-static_data <- data.frame()
+# VARNAME: polls_by_ctry_list is a list of lists with poll data for each country
+# VARNAME: results_by_ctry_list has official results from election-results.eu
+# VARNAME: summary_by_country has the common part accross all CSVs (first part)
+# VARNAME: parties_by_country has parties-by-country data of the tibble (second part)
+# VARNAME: parties is a list of parties in each country
+polls_by_ctry_list <- results_by_ctry_list <-
+  summary_by_country <- parties_by_country <- parties <- list() 
+# VARNAME: eopaod_static_data is a tibble with all countries' static data
+# it is more logical to split data here for preprocessing then add it by country 
+# in '02description.R'. Otherwise, we would have to put all parties from each 
+# country altogether in one huge table rendering it less descriptive 
+# since e.g. bulgarian voters cannot vote in the Netherlands etc.
+eopaod_static_data <- data.frame()
 count <- 1 
 for(country_suffix in eu_country_codes){
   # skip data frames in EOPaOD folder not present in proper format
@@ -120,7 +129,6 @@ for(country_suffix in eu_country_codes){
     import_path_results <- paste(import_path_prefix, "eu_results/election_results/",
                                  country_suffix, ".csv", sep = "")
     
-    # VARNAME: polls_by_ctry_list is a list of lists with poll data for each country
     # using readr::read_csv as a better version of read.csv ()
     # alt. compact way to define column types: c, i, n, d, l, f, D, T, t, ?, _/-
     polls_by_ctry_list <- c(
@@ -142,7 +150,6 @@ for(country_suffix in eu_country_codes){
     print(paste(
       "imported", names(eu_country_codes[count]), "from", import_path_polls)) 
     
-    # VARNAME: results_by_ctry_list has official results from election-results.eu
     results_by_ctry_list <- c(
       results_by_ctry_list, lapply(import_path_results, read_delim,
                                    delim = ";",
@@ -158,68 +165,88 @@ for(country_suffix in eu_country_codes){
   }
 }
 # each tibble gets the label of the respective country
-names(polls_by_ctry_list) <- eu_country_codes[!eu_country_codes %in% skipped_country_codes]
-names(results_by_ctry_list) <- eu_country_codes[!eu_country_codes %in% skipped_country_codes]
+names(polls_by_ctry_list) <- 
+  eu_country_codes[!eu_country_codes %in% skipped_country_codes]
+names(results_by_ctry_list) <-
+  eu_country_codes[!eu_country_codes %in% skipped_country_codes]
 #reset counter to avoid errors in reruns
 count <- NULL
 
-# VARNAME: summary_by_country extracts first part of the tibble (common part accross all CSVs) 
-# extract second part of the tibble (parties-dependent part) into parties_by_country
+# initialize parties_by_ctry_list and eopaod_static_data via polls_by_ctry_list
 # add country code in first row in both structures
-for(country_suffix in eu_country_codes){
-  if(!country_suffix %in% skipped_country_codes){
-    print(paste("split tables for", names(eu_country_codes[eu_country_codes==country_suffix])))
-    summary_by_country[[country_suffix]] <- polls_by_ctry_list[[country_suffix]][1:9]
-    summary_by_country[[country_suffix]] <- add_column(summary_by_country[[country_suffix]], 
-                                                       country = country_suffix, .before = 1)
-    summary_by_country[[country_suffix]] <- add_column(
-      summary_by_country[[country_suffix]],
-      duration = summary_by_country[[country_suffix]]$`Fieldwork End` 
-      - summary_by_country[[country_suffix]]$`Fieldwork Start`, .before = 6)
-    # Toggle show/hide
-    ## print(str(summary_by_country[[country_suffix]]))
-    # consolidate static part to generate one big data.frame
-    static_data <- rbind(static_data, summary_by_country[[country_suffix]])
+for(country_suffix in eu_country_codes) {
+  if(!country_suffix %in% skipped_country_codes) {
+    print(paste(
+      "split tables for", names(eu_country_codes[eu_country_codes==country_suffix])))
     
-    # VARNAME: parties_by_country extracts the second part of the tibble (parties-dependent part)
+    summary_by_country[[country_suffix]] <- polls_by_ctry_list[[country_suffix]][1:9]
+    summary_by_country[[country_suffix]] <- 
+      add_column(summary_by_country[[country_suffix]], 
+                 country = country_suffix, 
+                 .before = 1)
+    summary_by_country[[country_suffix]] <- 
+      add_column(summary_by_country[[country_suffix]],
+                 duration = summary_by_country[[country_suffix]]$`Fieldwork End` 
+                 - summary_by_country[[country_suffix]]$`Fieldwork Start`, 
+                 .before = 6)
+    # Toggle show/hide
+    print(str(summary_by_country[[country_suffix]]))
+    # consolidate static part to generate one big data.frame
+    eopaod_static_data <- rbind(
+      eopaod_static_data, summary_by_country[[country_suffix]])
+    
     parties_by_country[[country_suffix]] <- polls_by_ctry_list[[country_suffix]][-(1:9)]
-    parties_by_country[[country_suffix]] <- add_column(parties_by_country[[country_suffix]],
-                                                       country = country_suffix, .before = 1)
-    #TODO:ASK: use instead: lapply(data_list[[country_suffix]], add_column, parties_by_country[[country_suffix]], country = country_suffix)
-    parties_by_country[[country_suffix]] <- lapply(parties_by_country[[country_suffix]], gsub, pattern = "%", replacement='' ) # remove "%"
-    #TODO: Produces warning inside file: NAs introduced by coercion - outside it produces error?
-    parties_by_country[[country_suffix]] <- lapply(parties_by_country[[country_suffix]][-1], as.numeric) # convert all but first row to numbers
+    parties_by_country[[country_suffix]] <- 
+      add_column(parties_by_country[[country_suffix]],
+                 country = country_suffix, 
+                 .before = 1)
+    # remove "%" then convert all but first row to numbers to match a data format R can use
+    parties_by_country[[country_suffix]] <- lapply(
+      parties_by_country[[country_suffix]], gsub, pattern = "%", replacement='' )
+    parties_by_country[[country_suffix]] <- lapply(
+      parties_by_country[[country_suffix]][-1], as.numeric)
     # Toggle show/hide
     # writeLines(paste("\n", str(parties_by_country[[country_suffix]]), "\n"))
+    # initialize parties
     parties[[country_suffix]] <- names(parties_by_country[[country_suffix]])
     
   }
 }
 
 
-# check static_data for anomalies / errors -------------------------------------------------
-## static_data contains the non-party-dependent statistics of all entries from all Member States
 
-static_data$country <- factor(static_data$country)
 
-  # correct $duration----------------
-min(static_data$duration)
-median(static_data$duration)
-max(static_data$duration)
 
-static_data[static_data$duration < 0, ]
+
+
+# ---- polls by country heya el mosta2bal..hanboss f eopaod_static_data w nesalla7 fel etnein
+
+# check eopaod_static_data for anomalies / errors then correct them in both ------------------------------------
+## eopaod_static_data contains the non-party-dependent statistics of all entries from all Member States
+
+eopaod_static_data$country <- factor(eopaod_static_data$country)
+
+# correct $duration----------------
+min(eopaod_static_data$duration)
+median(eopaod_static_data$duration)
+max(eopaod_static_data$duration)
+# examine duration anomalies, assuming these are errors
+eopaod_static_data[eopaod_static_data$duration < 0, ]
 #negative differences are not possible. We conclude this happened because of data entry typos 
-    # static_data %>%
-    #   mutate(static_data[static_data$duration < 0, ][1,]$`Fieldwork End` <- as.Date("2019-05-08")) %>% # %M typo
-    #   static_data
-static_data[static_data$duration < 0, ][1,]$`Fieldwork End` <- as.Date("2019-05-08") # %M typo
-static_data[static_data$duration < 0, ][2,]$`Fieldwork End` <- as.Date("2019-04-01") # since 2019 is not a leap year, we assume the typo is %M
-static_data[static_data$duration < 0, ][3,]$`Fieldwork End` <- as.Date("2019-05-17") # %Y typo
-static_data[static_data$duration < 0, ][4,]$`Fieldwork End` <- as.Date("2019-05-02") # %Y typo
-static_data$duration <- static_data$`Fieldwork End` - static_data$`Fieldwork Start`
+eopaod_static_data[eopaod_static_data$duration < 0, ][1,]$`Fieldwork End` <- 
+  as.Date("2019-05-08") # %M typo
+eopaod_static_data[eopaod_static_data$duration < 0, ][2,]$`Fieldwork End` <- 
+  as.Date("2019-04-01") # since 2019 is not a leap year, we assume the typo is %M
+eopaod_static_data[eopaod_static_data$duration < 0, ][3,]$`Fieldwork End` <- 
+  as.Date("2019-05-17") # %Y typo
+eopaod_static_data[eopaod_static_data$duration < 0, ][4,]$`Fieldwork End` <- 
+  as.Date("2019-05-02") # %Y typo
+# correct durations
+eopaod_static_data$duration <- 
+  eopaod_static_data$`Fieldwork End` - eopaod_static_data$`Fieldwork Start`
 
-
-
+# examine commisioners
+# TODO check for synonyms if necessary - details in paper
 
 
 
@@ -228,35 +255,35 @@ static_data$duration <- static_data$`Fieldwork End` - static_data$`Fieldwork Sta
 
 # stats -------------------------------------------------------------
 
-str(static_data)
-summary(static_data)
+str(eopaod_static_data)
+summary(eopaod_static_data)
 
 # variables to use in graphs later
-polling_firms_summary <- summary(static_data$`Polling Firm`)
-commissioners_summary <- summary(static_data$Commissioners)
+polling_firms_summary <- summary(eopaod_static_data$`Polling Firm`)
+commissioners_summary <- summary(eopaod_static_data$Commissioners)
 
 
-min(static_data$`Sample Size`, na.rm = TRUE)
-max(static_data$`Sample Size`, na.rm = TRUE)
-median(static_data$`Sample Size`, na.rm = TRUE)
-mean(static_data$`Sample Size`, na.rm = TRUE)
+min(eopaod_static_data$`Sample Size`, na.rm = TRUE)
+max(eopaod_static_data$`Sample Size`, na.rm = TRUE)
+median(eopaod_static_data$`Sample Size`, na.rm = TRUE)
+mean(eopaod_static_data$`Sample Size`, na.rm = TRUE)
 
-nos_by_country <-summary(static_data$country)
+nos_by_country <-summary(eopaod_static_data$country)
 
 # most recent start date
-max(static_data$`Fieldwork Start`)
-static_data %>%
+max(eopaod_static_data$`Fieldwork Start`)
+eopaod_static_data %>%
   arrange(desc(`Fieldwork Start`))
 
   #oldest start date
-min(static_data$`Fieldwork Start`)
-static_data %>%
+min(eopaod_static_data$`Fieldwork Start`)
+eopaod_static_data %>%
   arrange((`Fieldwork Start`))#2017 not 2018!
 
-static_data %>%
+eopaod_static_data %>%
   arrange(desc(duration))
 
-static_data %>%
+eopaod_static_data %>%
   arrange((duration))
 
 
@@ -363,7 +390,7 @@ meps_df$mep_name <- as.character(meps_df$mep_name)
 
 
 
-# TODO create a 'europarty_data' that maps each country's nat party to a europarty such that the new table can join 1:1 with static_data
+# TODO create a 'europarty_data' that maps each country's nat party to a europarty such that the new table can join 1:1 with eopaod_static_data
 
 # for that we need a list of each nat party's europarty grouping
 # this we have indirectly in meps_df
