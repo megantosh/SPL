@@ -5,8 +5,7 @@
 
 # Imports ---------------------------------------------------------------------
 
-## TODO: remove if not required
-## Unload packages to reset
+## Unload packages to reset - do not perform if package versions are conflicting
 # detach("package:dplyr")  
 # detach("package:stats")  
 
@@ -131,17 +130,19 @@ for(country_suffix in eu_country_codes){
     
     # using readr::read_csv as a better version of read.csv ()
     # alt. compact way to define column types: c, i, n, d, l, f, D, T, t, ?, _/-
+    # .default eliminates '%' in 'Precision', 'Participation' and parties  '%'
     polls_by_ctry_list <- c(
       polls_by_ctry_list, lapply(import_path_polls, read_csv, 
                                  na = c("", "NA", "N.A.", "NaN", "Not Available"),
                                  col_types = cols(
                                    `Polling Firm` = col_factor(),
                                    `Commissioners` = col_factor(),
+                                   `Fieldwork Start` = col_date(),
+                                   `Fieldwork End` = col_date(),
                                    `Scope` = col_factor(),
                                    `Sample Size Qualification` = col_factor(),
-                                   # converts to char bec of '%' in the number
-                                   `Precision` = col_number(), 
-                                   `Participation` = col_number()
+                                   `Participation` = col_number(),
+                                   .default = col_number()
                                    )
                                  )
       )
@@ -190,12 +191,15 @@ for(country_suffix in eu_country_codes) {
                  - summary_by_country[[country_suffix]]$`Fieldwork Start`, 
                  .before = 6)
     # Toggle show/hide
-    print(str(summary_by_country[[country_suffix]]))
-    # consolidate static part to generate one big data.frame
+    ## print(str(summary_by_country[[country_suffix]]))
+    
+    # consolidate "first part" to generate one big data frame of all countries
     eopaod_static_data <- rbind(
       eopaod_static_data, summary_by_country[[country_suffix]])
     
-    parties_by_country[[country_suffix]] <- polls_by_ctry_list[[country_suffix]][-(1:9)]
+    # initialize parties_by_country
+    parties_by_country[[country_suffix]] <- 
+      polls_by_ctry_list[[country_suffix]][-(1:9)]
     parties_by_country[[country_suffix]] <- 
       add_column(parties_by_country[[country_suffix]],
                  country = country_suffix, 
@@ -209,6 +213,13 @@ for(country_suffix in eu_country_codes) {
     # writeLines(paste("\n", str(parties_by_country[[country_suffix]]), "\n"))
     # initialize parties
     parties[[country_suffix]] <- names(parties_by_country[[country_suffix]])
+    
+    #add duration to polls_by_ctry_list
+    polls_by_ctry_list[[country_suffix]] <- 
+      add_column(polls_by_ctry_list[[country_suffix]],
+                 duration = polls_by_ctry_list[[country_suffix]]$`Fieldwork End` 
+                 - polls_by_ctry_list[[country_suffix]]$`Fieldwork Start`, 
+                 .before = 6)
     
   }
 }
@@ -226,13 +237,14 @@ for(country_suffix in eu_country_codes) {
 
 eopaod_static_data$country <- factor(eopaod_static_data$country)
 
-# correct $duration----------------
+# correct $duration------------------------------------------------------------
 min(eopaod_static_data$duration)
 median(eopaod_static_data$duration)
 max(eopaod_static_data$duration)
 # examine duration anomalies, assuming these are errors
 eopaod_static_data[eopaod_static_data$duration < 0, ]
-#negative differences are not possible. We conclude this happened because of data entry typos 
+# correct negative differences as these are not possible. 
+# We conclude this happened because of data entry typos 
 eopaod_static_data[eopaod_static_data$duration < 0, ][1,]$`Fieldwork End` <- 
   as.Date("2019-05-08") # %M typo
 eopaod_static_data[eopaod_static_data$duration < 0, ][2,]$`Fieldwork End` <- 
@@ -241,9 +253,12 @@ eopaod_static_data[eopaod_static_data$duration < 0, ][3,]$`Fieldwork End` <-
   as.Date("2019-05-17") # %Y typo
 eopaod_static_data[eopaod_static_data$duration < 0, ][4,]$`Fieldwork End` <- 
   as.Date("2019-05-02") # %Y typo
-# correct durations
+# correct durations 
+# Warning: corrections happen only in this table and not in the polls_by_ctry!
 eopaod_static_data$duration <- 
   eopaod_static_data$`Fieldwork End` - eopaod_static_data$`Fieldwork Start`
+
+
 
 # examine commisioners
 # TODO check for synonyms if necessary - details in paper
