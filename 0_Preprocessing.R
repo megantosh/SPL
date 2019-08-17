@@ -78,7 +78,7 @@ print(paste("Project Working Directory: ", getwd()))
 # import all country CSVs into one big list of tibbles (data frames)
 import_path_prefix <- "datasets/eopaod-master/docs/"
 # init list to store data frames and iterate over - warning: use these lines when rerunning code to avoid duplicates
-data_list <- summary_by_country <- parties_by_country <- list() # TODO:ASK is okay to init multiple vars like this or prefer extra line for each to explain var name / manipilate separately etc?
+data_list <- summary_by_country <- parties_by_country <- parties <- list() # TODO:ASK is okay to init multiple vars like this or prefer extra line for each to explain var name / manipilate separately etc?
 count <- 1 
 for(country_suffix in eu_country_codes){
   # skips in case you want to exclude a certain data frame not currently present (in proper format) in folder 
@@ -104,37 +104,80 @@ for(country_suffix in eu_country_codes){
     print(paste("imported", names(eu_country_codes[count]), "from", import_path)) #,"into", names(data_list[[count]])))
   }
 }
+names(data_list) <- eu_country_codes[!eu_country_codes %in% skipped_eu_country_codes]
 count <- NULL #reset counter to avoid errors in reruns
-# TODO: change index to exclude skippable countries
-names(data_list) <- eu_country_codes[!eu_country_codes %in% skipped_eu_country_codes] # starts at 2 ignoring Belgium 
-
+static_data <- data.frame()
 
 # extract first part of the tibble (common part accross all CSVs) into summary_by_country
 # extract second part of the tibble (parties-dependent part) into parties_by_country
 # add country code in first row in both structures
 for(country_suffix in eu_country_codes){
   if(!country_suffix %in% skipped_eu_country_codes){
-    print(paste("table split for", names(eu_country_codes[eu_country_codes==country_suffix])))
+    print(paste("split tables for", toupper(names(eu_country_codes[eu_country_codes==country_suffix]))))
     summary_by_country[[country_suffix]] <- data_list[[country_suffix]][1:9]
     summary_by_country[[country_suffix]] <- add_column(summary_by_country[[country_suffix]], country = country_suffix, .before = 1)
     summary_by_country[[country_suffix]] <- add_column(summary_by_country[[country_suffix]], duration =
                                                          summary_by_country[[country_suffix]]$`Fieldwork End` 
-                                                       - summary_by_country[[country_suffix]]$`Fieldwork Start`)
-    # cols_vec <- c(summary_by_country[[country_suffix]]$`Polling Firm`, summary_by_country[[country_suffix]]$`Commissioners`, 
-                  # summary_by_country[[country_suffix]]$`Scope`, summary_by_country[[country_suffix]]$`Sample Size Qualification`,
-                  # summary_by_country[[country_suffix]]$`Participation`)
-    # factor(cols_vec)
+                                                       - summary_by_country[[country_suffix]]$`Fieldwork Start`, .before = 6)
+    print(str(summary_by_country[[country_suffix]]))
+    static_data <- rbind(static_data, summary_by_country[[country_suffix]]) # consolidate static part to generate one big data.frame
     
-    parties_by_country[[country_suffix]] <- data_list[[country_suffix]][-(1:9)]
+
+    parties_by_country[[country_suffix]] <- data_list[[country_suffix]][-(1:9)] # TODO:ASK as.data.frame is overriden. why?
     parties_by_country[[country_suffix]] <- add_column(parties_by_country[[country_suffix]], country = country_suffix, .before = 1)
     #TODO:ASK: use instead: lapply(data_list[[country_suffix]], add_column, parties_by_country[[country_suffix]], country = country_suffix)
     parties_by_country[[country_suffix]] <- lapply(parties_by_country[[country_suffix]], gsub, pattern = "%", replacement='' ) # remove "%"
     parties_by_country[[country_suffix]] <- lapply(parties_by_country[[country_suffix]][-1], as.numeric) # convert all but first row to numbers
-    print(str(parties_by_country[[country_suffix]]))
+    writeLines(paste("\n", str(parties_by_country[[country_suffix]]), "\n"))
+    parties[[country_suffix]] <- names(parties_by_country[[country_suffix]])
+    
   }
 }
 
-# ---
+# assign europarties and political orientation ------------------------------------------------------
+# <div class="flourish-embed flourish-survey" data-src="visualisation/143818"></div><script src="https://public.flourish.studio/resources/embed.js"></script>
+# using a data.frame that contains lists for each cell
+# party_repr_in_eup <- list of vectors( , nrow = count_eu_countries)
+
+europarties_2014_members <- (europarties_2014)
+europarties_2014_members["GUE/NGL"] <-  c( NA, "NddA", NA, NA, NA, NA, NA, NA, NA, NA)
+europarties_2014_members["bg"] <-  c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA)
+europarties_2014_members["cz"] <-  c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA)
+europarties_2014_members["dk"] <-  c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA)
+europarties_2014_members["de"] <-  c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA)
+europarties_2014_members["ee"] <-  c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA)
+europarties_2014_members["ie"] <-  c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA)
+europarties_2014_members["gr"] <-  c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA)
+europarties_2014_members["es"] <-  c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA)
+europarties_2014_members["fr"] <-  c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA)
+europarties_2014_members["hr"] <-  c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA)
+europarties_2014_members["it"] <-  c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA)
+europarties_2014_members["cy"] <-  c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA)
+europarties_2014_members["lv"] <-  c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA)
+europarties_2014_members["lt"] <-  c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA)
+europarties_2014_members["lu"] <-  c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA)
+europarties_2014_members["hu"] <-  c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA)
+europarties_2014_members["mt"] <-  c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA)
+europarties_2014_members["nl"] <-  c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA)
+europarties_2014_members["at"] <-  c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA)
+europarties_2014_members["pl"] <-  c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA)
+europarties_2014_members["pt"] <-  c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA)
+europarties_2014_members["ro"] <-  c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA)
+europarties_2014_members["si"] <-  c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA)
+europarties_2014_members["sk"] <-  c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA)
+europarties_2014_members["fi"] <-  c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA)
+europarties_2014_members["se"] <-  c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA)
+europarties_2014_members["gb-gbn"] <-  c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA)
+
+
+
+
+parties[['bg']][1], parties[['dk']][2])
+# names(europarties_2014_members[2]) <- "Hej"
+
+
+# party_political_aff <- left, right, etc -----------------------------------------------------------
+
 
 class(data_list)
 str(data_list)
@@ -144,17 +187,15 @@ tail(data_list)
 View(data_list)
 
 
-# party_repr_in_eup <- list of vectors( , nrow = count_eu_countries)
-# party_political_aff <- left, right, etc
 # TODO use levels() in pol_positions
 
-
-
-
-
-# zabbat-hom el awwel marra wa7da ba3dein efselhom
-# summarize kol el polls by sherka, by country ...
+# summarize kol el polls by sherka, by country -------------------------------------------------------
+# this is no longer preprocessing
 # subgroup by bigger countries
+
+
+# DONE zabbat-hom el awwel marra wa7da ba3dein efselhom
+
 # how many seats with respect to how many countries - and the way this is changing with brexit seats redistributed
 # apply on 2014 poll if possible
 
@@ -230,29 +271,6 @@ comparison_df <- data.frame()
 
 
 # Function: ------------
-
-transform_country_csv <- function(input_data_frame) {
-  # although some NAs are discovered by dplyr, the word "Not Available" for instance is not - this is a fix
-  # input_data_frame <- lapply(input_data_frame, gsub, pattern = "Not Available|NA|N.A.|N/A", ignore.case = TRUE , replacement= NA)
-  # input_data_frame <- lapply(input_data_frame, gsub, pattern = "%", replacement='' )
-  # readr takes care of that - superfluous
-  # input_data_frame$Fieldwork.Start <- as.Date(as.character(input_data_frame$Fieldwork.Start))
-  # input_data_frame$Fieldwork.End <- as.Date(as.character(input_data_frame$Fieldwork.End))
-  # input_data_frame$duration <- as.numeric(input_data_frame$Fieldwork.End - input_data_frame$Fieldwork.Start)
-  # input_data_frame$Sample.Size <- as.character(input_data_frame$Sample.Size)
-  input_data_frame
-  str(input_data_frame)
-  head(input_data_frame)
-  return(input_data_frame)
-}
-
-
-fr_trans <- as.data.frame(transform_country_csva(FR_data))
-fr_trans <- as.data.frame(transform_country_csva())
-
-
-
-
 
 
 if(DE_data$Sample.Size == "NA" | "Not Available" | "N/A"){

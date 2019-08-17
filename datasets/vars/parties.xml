@@ -1,0 +1,1970 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<parties>
+    <countries>
+        <country countryId="BE">
+            <candidates>
+                <candidate candidateId="BE01">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>CD&amp;V</candidateAcronym>
+                    <candidateLongName>Christen-Democratisch &amp; Vlaams</candidateLongName>
+                </candidate>
+                <candidate candidateId="BE02">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Groen</candidateAcronym>
+                    <candidateLongName>Groen</candidateLongName>
+                </candidate>
+                <candidate candidateId="BE03">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>N-VA</candidateAcronym>
+                    <candidateLongName>Nieuw-Vlaamse Alliantie</candidateLongName>
+                </candidate>
+                <candidate candidateId="BE04">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>sp.a</candidateAcronym>
+                    <candidateLongName>Socialistische Partij - Anders</candidateLongName>
+                </candidate>
+                <candidate candidateId="BE05">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>VI.Belang</candidateAcronym>
+                    <candidateLongName>Vlaams Belang</candidateLongName>
+                </candidate>
+                <candidate candidateId="BE06">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Open VLD</candidateAcronym>
+                    <candidateLongName>Open Vlaamse Liberalen en Democraten</candidateLongName>
+                </candidate>
+                <candidate candidateId="BE07">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>PVDA-PTB</candidateAcronym>
+                    <candidateLongName>Partij van de Arbeid van België</candidateLongName>
+                </candidate>
+                <candidate candidateId="BE08">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>PS</candidateAcronym>
+                    <candidateLongName>Parti Socialiste</candidateLongName>
+                </candidate>
+                <candidate candidateId="BE09">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>MR</candidateAcronym>
+                    <candidateLongName>Mouvement Réformateur</candidateLongName>
+                </candidate>
+                <candidate candidateId="BE10">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>cdH</candidateAcronym>
+                    <candidateLongName>Centre Démocrate Humaniste</candidateLongName>
+                </candidate>
+                <candidate candidateId="BE11">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>ECOLO</candidateAcronym>
+                    <candidateLongName>Ecologistes Confédérés pour l'Organisation de Luttes Originales</candidateLongName>
+                </candidate>
+                <candidate candidateId="BE12">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>PTB-PVDA</candidateAcronym>
+                    <candidateLongName>Parti du Travail de Belgique</candidateLongName>
+                </candidate>
+                <candidate candidateId="BE13">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>DéFI</candidateAcronym>
+                    <candidateLongName>Démocrate Fédéraliste Indépendant</candidateLongName>
+                </candidate>
+                <candidate candidateId="BE14">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>PP</candidateAcronym>
+                    <candidateLongName>Parti Populaire</candidateLongName>
+                </candidate>
+                <candidate candidateId="BE15">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>CSP</candidateAcronym>
+                    <candidateLongName>Christlich Soziale Partei</candidateLongName>
+                </candidate>
+                <candidate candidateId="BE16">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>SP</candidateAcronym>
+                    <candidateLongName>Sozialistische Partei</candidateLongName>
+                </candidate>
+                <candidate candidateId="BE17">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>PFF</candidateAcronym>
+                    <candidateLongName>Partei für Freiheit und Fortschritt</candidateLongName>
+                </candidate>
+                <candidate candidateId="BE18">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>ProDG</candidateAcronym>
+                    <candidateLongName>Pro deutschsprachige Gemeinschaft</candidateLongName>
+                </candidate>
+                <candidate candidateId="BE19">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>ECOLO (G.)</candidateAcronym>
+                    <candidateLongName>Ecologistes Confédérés pour l'Organisation de Luttes Originales (G.)</candidateLongName>
+                </candidate>
+                <candidate candidateId="BE90">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Other parties F.</candidateAcronym>
+                    <candidateLongName>Other parties from Dutch-speaking electoral college</candidateLongName>
+                </candidate>
+                <candidate candidateId="BE91">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Other parties W.</candidateAcronym>
+                    <candidateLongName>Other parties from French-speaking electoral college</candidateLongName>
+                </candidate>
+                <candidate candidateId="BE92">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Other parties G.</candidateAcronym>
+                    <candidateLongName>Other parties from German-speaking electoral college</candidateLongName>
+                </candidate>
+            </candidates>
+        </country>
+        <country countryId="FBE">
+            <candidates>
+                <candidate candidateId="BE01">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>CD&amp;V</candidateAcronym>
+                    <candidateLongName>Christen-Democratisch &amp; Vlaams</candidateLongName>
+                </candidate>
+                <candidate candidateId="BE02">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Groen</candidateAcronym>
+                    <candidateLongName>Groen</candidateLongName>
+                </candidate>
+                <candidate candidateId="BE03">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>N-VA</candidateAcronym>
+                    <candidateLongName>Nieuw-Vlaamse Alliantie</candidateLongName>
+                </candidate>
+                <candidate candidateId="BE04">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>sp.a</candidateAcronym>
+                    <candidateLongName>Socialistische Partij - Anders</candidateLongName>
+                </candidate>
+                <candidate candidateId="BE05">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>VI.Belang</candidateAcronym>
+                    <candidateLongName>Vlaams Belang</candidateLongName>
+                </candidate>
+                <candidate candidateId="BE06">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Open VLD</candidateAcronym>
+                    <candidateLongName>Open Vlaamse Liberalen en Democraten</candidateLongName>
+                </candidate>
+                <candidate candidateId="BE07">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>PVDA-PTB</candidateAcronym>
+                    <candidateLongName>Partij van de Arbeid van België</candidateLongName>
+                </candidate>
+                <candidate candidateId="BE90">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Other parties F.</candidateAcronym>
+                    <candidateLongName>Other parties from Dutch-speaking electoral college</candidateLongName>
+                </candidate>
+            </candidates>
+        </country>
+        <country countryId="GBE">
+            <candidates>
+                <candidate candidateId="BE15">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>CSP</candidateAcronym>
+                    <candidateLongName>Christlich Soziale Partei</candidateLongName>
+                </candidate>
+                <candidate candidateId="BE16">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>SP</candidateAcronym>
+                    <candidateLongName>Sozialistische Partei</candidateLongName>
+                </candidate>
+                <candidate candidateId="BE17">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>PFF</candidateAcronym>
+                    <candidateLongName>Partei für Freiheit und Fortschritt</candidateLongName>
+                </candidate>
+                <candidate candidateId="BE18">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>ProDG</candidateAcronym>
+                    <candidateLongName>Pro deutschsprachige Gemeinschaft</candidateLongName>
+                </candidate>
+                <candidate candidateId="BE19">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>ECOLO (G.)</candidateAcronym>
+                    <candidateLongName>Ecologistes Confédérés pour l'Organisation de Luttes Originales (G.)</candidateLongName>
+                </candidate>
+                <candidate candidateId="BE92">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Other parties G.</candidateAcronym>
+                    <candidateLongName>Other parties from German-speaking electoral college</candidateLongName>
+                </candidate>
+            </candidates>
+        </country>
+        <country countryId="WBE">
+            <candidates>
+                <candidate candidateId="BE08">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>PS</candidateAcronym>
+                    <candidateLongName>Parti Socialiste</candidateLongName>
+                </candidate>
+                <candidate candidateId="BE09">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>MR</candidateAcronym>
+                    <candidateLongName>Mouvement Réformateur</candidateLongName>
+                </candidate>
+                <candidate candidateId="BE10">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>cdH</candidateAcronym>
+                    <candidateLongName>Centre Démocrate Humaniste</candidateLongName>
+                </candidate>
+                <candidate candidateId="BE11">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>ECOLO</candidateAcronym>
+                    <candidateLongName>Ecologistes Confédérés pour l'Organisation de Luttes Originales</candidateLongName>
+                </candidate>
+                <candidate candidateId="BE12">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>PTB-PVDA</candidateAcronym>
+                    <candidateLongName>Parti du Travail de Belgique</candidateLongName>
+                </candidate>
+                <candidate candidateId="BE13">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>DéFI</candidateAcronym>
+                    <candidateLongName>Démocrate Fédéraliste Indépendant</candidateLongName>
+                </candidate>
+                <candidate candidateId="BE14">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>PP</candidateAcronym>
+                    <candidateLongName>Parti Populaire</candidateLongName>
+                </candidate>
+                <candidate candidateId="BE91">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Other parties W.</candidateAcronym>
+                    <candidateLongName>Other parties from French-speaking electoral college</candidateLongName>
+                </candidate>
+            </candidates>
+        </country>
+        <country countryId="BG">
+            <candidates>
+                <candidate candidateId="BG01">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>BSP/БСП</candidateAcronym>
+                    <candidateLongName>Bulgarska sotsialisticheska partiya/Българска социалистическа партия</candidateLongName>
+                </candidate>
+                <candidate candidateId="BG02">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>DPS/ДПС</candidateAcronym>
+                    <candidateLongName>Dvizhenie za prava i svobodi/Движение за права и свободи</candidateLongName>
+                </candidate>
+                <candidate candidateId="BG03">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>GERB/ГЕРБ</candidateAcronym>
+                    <candidateLongName>Coalition (Grazhdani za evropeysko razvitie na Balgariya + Sayuz na demokratichnite sili / Граждани за европейско развитие на България + Съюз на демократичните сили)</candidateLongName>
+                </candidate>
+                <candidate candidateId="BG04">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Koalitsiya za Bulgaria/Коалиция за България</candidateAcronym>
+                    <candidateLongName>Koalitsiya za Bulgaria / Коалиция за България ( Alternativa za balgarsko vazrazhdane et al. / Алтернатива за българско възраждане и други)</candidateLongName>
+                </candidate>
+                <candidate candidateId="BG05">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Volya/Воля</candidateAcronym>
+                    <candidateLongName>Volya / Воля</candidateLongName>
+                </candidate>
+                <candidate candidateId="BG06">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Demokratichna Bulgaria/Демократична България</candidateAcronym>
+                    <candidateLongName>Demokratichna Bulgaria / Демократична България</candidateLongName>
+                </candidate>
+                <candidate candidateId="BG07">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>ATAKA/АТАКА</candidateAcronym>
+                    <candidateLongName>Partiya Ataka/Партия Атака</candidateLongName>
+                </candidate>
+                <candidate candidateId="BG08">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>VMRO/ВМРО</candidateAcronym>
+                    <candidateLongName>VMRO - Bulgarsko Natsionalno Dvizhenie / ВМРО - Българско национално движение</candidateLongName>
+                </candidate>
+                <candidate candidateId="BG09">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>NFSB/НФСБ</candidateAcronym>
+                    <candidateLongName>Natsionalen Front za Spasenie na Bulgaria/Национален фронт за спасение на България</candidateLongName>
+                </candidate>
+                <candidate candidateId="BG90">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Other parties</candidateAcronym>
+                    <candidateLongName>Other parties</candidateLongName>
+                </candidate>
+            </candidates>
+        </country>
+        <country countryId="CZ">
+            <candidates>
+                <candidate candidateId="CZ01">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>ODS</candidateAcronym>
+                    <candidateLongName>Občanská demokratická strana</candidateLongName>
+                </candidate>
+                <candidate candidateId="CZ02">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>ČSSD</candidateAcronym>
+                    <candidateLongName>Česká strana sociálně demokratická</candidateLongName>
+                </candidate>
+                <candidate candidateId="CZ03">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>KSČM</candidateAcronym>
+                    <candidateLongName>Komunistická strana Čech a Moravy</candidateLongName>
+                </candidate>
+                <candidate candidateId="CZ04">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>KDU-ČSL</candidateAcronym>
+                    <candidateLongName>Křesťanská a demokratická unie – Československá strana lidová</candidateLongName>
+                </candidate>
+                <candidate candidateId="CZ05">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>TOP 09 + STAN</candidateAcronym>
+                    <candidateLongName>STAROSTOVÉ (STAN) s regionálními partnery a TOP 09</candidateLongName>
+                </candidate>
+                <candidate candidateId="CZ06">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>ANO 2011</candidateAcronym>
+                    <candidateLongName>ANO 2011</candidateLongName>
+                </candidate>
+                <candidate candidateId="CZ07">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Piráti</candidateAcronym>
+                    <candidateLongName>Česká pirátská strana</candidateLongName>
+                </candidate>
+                <candidate candidateId="CZ08">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>SPD</candidateAcronym>
+                    <candidateLongName>Svoboda a přímá demokracie</candidateLongName>
+                </candidate>
+                <candidate candidateId="CZ09">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>HLAS</candidateAcronym>
+                    <candidateLongName>HLAS</candidateLongName>
+                </candidate>
+                <candidate candidateId="CZ10">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>EU TROLL</candidateAcronym>
+                    <candidateLongName>ANO, vytrollíme europarlament</candidateLongName>
+                </candidate>
+                <candidate candidateId="CZ11">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Vědci pro ČR</candidateAcronym>
+                    <candidateLongName>Vědci pro Českou republiku   </candidateLongName>
+                </candidate>
+                <candidate candidateId="CZ12">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Coal ROZUMNÍ ND</candidateAcronym>
+                    <candidateLongName>Koalice Rozumní, ND</candidateLongName>
+                </candidate>
+                <candidate candidateId="CZ90">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Other parties</candidateAcronym>
+                    <candidateLongName>Other parties</candidateLongName>
+                </candidate>
+            </candidates>
+        </country>
+        <country countryId="DK">
+            <candidates>
+                <candidate candidateId="DK01">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>A (S)</candidateAcronym>
+                    <candidateLongName>Socialdemokratiet</candidateLongName>
+                </candidate>
+                <candidate candidateId="DK02">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>B (RV)</candidateAcronym>
+                    <candidateLongName>Det Radikale Venstre</candidateLongName>
+                </candidate>
+                <candidate candidateId="DK03">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>C (KF)</candidateAcronym>
+                    <candidateLongName>Det Konservative Folkeparti</candidateLongName>
+                </candidate>
+                <candidate candidateId="DK04">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>F (SF)</candidateAcronym>
+                    <candidateLongName>Socialistisk Folkeparti</candidateLongName>
+                </candidate>
+                <candidate candidateId="DK05">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>I (LA)</candidateAcronym>
+                    <candidateLongName>Liberal Alliance</candidateLongName>
+                </candidate>
+                <candidate candidateId="DK06">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>N</candidateAcronym>
+                    <candidateLongName>Folkebevægelsen mod EU</candidateLongName>
+                </candidate>
+                <candidate candidateId="DK07">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>O (DF)</candidateAcronym>
+                    <candidateLongName>Dansk Folkeparti</candidateLongName>
+                </candidate>
+                <candidate candidateId="DK08">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>V (V)</candidateAcronym>
+                    <candidateLongName>Venstre, Danmarks Liberale Parti</candidateLongName>
+                </candidate>
+                <candidate candidateId="DK09">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Ø (EL)</candidateAcronym>
+                    <candidateLongName>"Enhedslisten, de Rød-Grønne"</candidateLongName>
+                </candidate>
+                <candidate candidateId="DK10">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Å</candidateAcronym>
+                    <candidateLongName>Alternativet</candidateLongName>
+                </candidate>
+                <candidate candidateId="DK90">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Other parties</candidateAcronym>
+                    <candidateLongName>Other parties</candidateLongName>
+                </candidate>
+            </candidates>
+        </country>
+        <country countryId="DE">
+            <candidates>
+                <candidate candidateId="DE01">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>CDU - CSU</candidateAcronym>
+                    <candidateLongName>Christlich Demokratische Union Deutschlands / Christlich-Soziale Union in Bayern e.V.</candidateLongName>
+                </candidate>
+                <candidate candidateId="DE02">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>SPD</candidateAcronym>
+                    <candidateLongName>Sozialdemokratische Partei Deutschlands</candidateLongName>
+                </candidate>
+                <candidate candidateId="DE03">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>GRÜNE</candidateAcronym>
+                    <candidateLongName>Bündnis 90/Die Grünen</candidateLongName>
+                </candidate>
+                <candidate candidateId="DE04">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>DIE LINKE</candidateAcronym>
+                    <candidateLongName>DIE LINKE</candidateLongName>
+                </candidate>
+                <candidate candidateId="DE05">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>AfD</candidateAcronym>
+                    <candidateLongName>Alternative für Deutschland</candidateLongName>
+                </candidate>
+                <candidate candidateId="DE06">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>FDP</candidateAcronym>
+                    <candidateLongName>Freie Demokratische Partei</candidateLongName>
+                </candidate>
+                <candidate candidateId="DE07">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>FREIE WÄHLER</candidateAcronym>
+                    <candidateLongName>FREIE WÄHLER</candidateLongName>
+                </candidate>
+                <candidate candidateId="DE08">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>PIRATEN</candidateAcronym>
+                    <candidateLongName>Piratenpartei Deutschland</candidateLongName>
+                </candidate>
+                <candidate candidateId="DE09">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Tierschutzpartei</candidateAcronym>
+                    <candidateLongName>PARTEI MENSCH UMWELT TIERSCHUTZ</candidateLongName>
+                </candidate>
+                <candidate candidateId="DE10">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>NPD</candidateAcronym>
+                    <candidateLongName>Nationaldemokratische Partei Deutschlands</candidateLongName>
+                </candidate>
+                <candidate candidateId="DE11">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>FAMILIE</candidateAcronym>
+                    <candidateLongName>Familien-Partei Deutschlands</candidateLongName>
+                </candidate>
+                <candidate candidateId="DE12">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>ÖDP</candidateAcronym>
+                    <candidateLongName>Ökologisch-Demokratische Partei</candidateLongName>
+                </candidate>
+                <candidate candidateId="DE13">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Die PARTEI</candidateAcronym>
+                    <candidateLongName>Partei für Arbeit, Rechtsstaat, Tierschutz, Elitenförderung und basisdemokratische Initiative</candidateLongName>
+                </candidate>
+                <candidate candidateId="DE14">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>VOLT</candidateAcronym>
+                    <candidateLongName>VOLT</candidateLongName>
+                </candidate>
+                <candidate candidateId="DE90">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Other parties</candidateAcronym>
+                    <candidateLongName>Other parties</candidateLongName>
+                </candidate>
+            </candidates>
+        </country>
+        <country countryId="EE">
+            <candidates>
+                <candidate candidateId="EE01">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>RE</candidateAcronym>
+                    <candidateLongName>Eesti Reformierakond</candidateLongName>
+                </candidate>
+                <candidate candidateId="EE02">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>KE</candidateAcronym>
+                    <candidateLongName>Eesti Keskerakond</candidateLongName>
+                </candidate>
+                <candidate candidateId="EE03">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Isamaa</candidateAcronym>
+                    <candidateLongName>Isamaa Erakond</candidateLongName>
+                </candidate>
+                <candidate candidateId="EE04">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>SDE</candidateAcronym>
+                    <candidateLongName>Sotsiaaldemokraatlik Erakond</candidateLongName>
+                </candidate>
+                <candidate candidateId="EE05">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>EER</candidateAcronym>
+                    <candidateLongName>Erakond Eestimaa Rohelised</candidateLongName>
+                </candidate>
+                <candidate candidateId="EE06">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>EKRE</candidateAcronym>
+                    <candidateLongName>Eesti Konservatiivne Rahvaerakond</candidateLongName>
+                </candidate>
+                <candidate candidateId="EE07">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Eesti 200</candidateAcronym>
+                    <candidateLongName>Erakond Eesti 200</candidateLongName>
+                </candidate>
+                <candidate candidateId="EE08">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>ERE</candidateAcronym>
+                    <candidateLongName>Elurikkuse Erakond</candidateLongName>
+                </candidate>
+                <candidate candidateId="EE90">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Other parties</candidateAcronym>
+                    <candidateLongName>Other parties</candidateLongName>
+                </candidate>
+            </candidates>
+        </country>
+        <country countryId="IE">
+            <candidates>
+                <candidate candidateId="IE01">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>FF</candidateAcronym>
+                    <candidateLongName>Fianna Fáil Party</candidateLongName>
+                </candidate>
+                <candidate candidateId="IE02">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>FG</candidateAcronym>
+                    <candidateLongName>Fine Gael Party</candidateLongName>
+                </candidate>
+                <candidate candidateId="IE03">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>LAB</candidateAcronym>
+                    <candidateLongName>Labour Party</candidateLongName>
+                </candidate>
+                <candidate candidateId="IE04">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>GP</candidateAcronym>
+                    <candidateLongName>Green Party</candidateLongName>
+                </candidate>
+                <candidate candidateId="IE05">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>SF</candidateAcronym>
+                    <candidateLongName>Sinn Féin</candidateLongName>
+                </candidate>
+                <candidate candidateId="IE06">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Ind.</candidateAcronym>
+                    <candidateLongName>Independents</candidateLongName>
+                </candidate>
+                <candidate candidateId="IE07">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>SD</candidateAcronym>
+                    <candidateLongName>Social Democrats</candidateLongName>
+                </candidate>
+                <candidate candidateId="IE90">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Other parties</candidateAcronym>
+                    <candidateLongName>Other parties</candidateLongName>
+                </candidate>
+            </candidates>
+        </country>
+        <country countryId="EL">
+            <candidates>
+                <candidate candidateId="EL01">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Ν.Δ/N.D.</candidateAcronym>
+                    <candidateLongName>Νέα Δημοκρατία/New Democracy</candidateLongName>
+                </candidate>
+                <candidate candidateId="EL02">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Coal. KINAL/ΚΙΝΑΛ ( ΠΑΣΟΚ + ΔΗΣΥ + ΚΙΔΗΣΟ / PASOK + DISI + KIDISO)</candidateAcronym>
+                    <candidateLongName>Coalition Κίνημα Αλλαγής/Movement for Change (Πανελλήνιο Σοσιαλιστικό Κίνημα + Δημοκρατική Συμπαράταξη + Κίνημα Δημοκρατών Σοσιαλιστών / Panhellenic Socialist Movement + Democratic Alignment + Movement of Democratic Socialists)</candidateLongName>
+                </candidate>
+                <candidate candidateId="EL03">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>KKE</candidateAcronym>
+                    <candidateLongName>Κομμουνιστικό Κόμμα Ελλάδας/Communist Party of Greece</candidateLongName>
+                </candidate>
+                <candidate candidateId="EL04">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>ΣΥ.ΡΙ.ΖΑ./SY.RΙ.ΖΑ.</candidateAcronym>
+                    <candidateLongName>Συνασπισμός Ριζοσπαστικής Αριστεράς/Coalition of the Radical Left</candidateLongName>
+                </candidate>
+                <candidate candidateId="EL05">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>X.A.</candidateAcronym>
+                    <candidateLongName>Χρυσή Αυγή/Golden Dawn</candidateLongName>
+                </candidate>
+                <candidate candidateId="EL06">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>ΑΝ.ΕΛ/ANEL</candidateAcronym>
+                    <candidateLongName>Ανεξάρτητοι Έλληνες/Independent Greeks</candidateLongName>
+                </candidate>
+                <candidate candidateId="EL07">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>E.K.</candidateAcronym>
+                    <candidateLongName>Ένωση Κεντρώων / Union of Centrists</candidateLongName>
+                </candidate>
+                <candidate candidateId="EL08">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>ΛΑΕ/LAE</candidateAcronym>
+                    <candidateLongName>Λαϊκή Ενότητα-Μέτωπο ανατροπής / Popular Unity</candidateLongName>
+                </candidate>
+                <candidate candidateId="EL09">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>ΕΛ/EL</candidateAcronym>
+                    <candidateLongName>Ελληνική Λύση / Greek Solution</candidateLongName>
+                </candidate>
+                <candidate candidateId="EL10">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>To Potami</candidateAcronym>
+                    <candidateLongName>Το Ποτάμι/The River</candidateLongName>
+                </candidate>
+                <candidate candidateId="EL11">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Πλεύση Ελευθερίας /Course of Freedom</candidateAcronym>
+                    <candidateLongName>Πλεύση Ελευθερίας /Course of Freedom</candidateLongName>
+                </candidate>
+                <candidate candidateId="EL12">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>ΑΝΤ.ΑΡ.ΣΥ.Α/ANT.AR.SY.A</candidateAcronym>
+                    <candidateLongName>Αντικαπιταλιστική Αριστερή Συνεργασία για την Ανατροπή/Front of the Greek Anticapitalist Left </candidateLongName>
+                </candidate>
+                <candidate candidateId="EL13">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>ΜέΡΑ25/DiEM25</candidateAcronym>
+                    <candidateLongName>Μέτωπο Ευρωπαϊκής Ρεαλιστικής Ανυπακοής /European Realistic Disobedience Front</candidateLongName>
+                </candidate>
+                <candidate candidateId="EL14">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Ο.Π./O.P.</candidateAcronym>
+                    <candidateLongName>Οικολόγοι Πράσινοι/Ecologist Greens</candidateLongName>
+                </candidate>
+                <candidate candidateId="EL90">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Other parties</candidateAcronym>
+                    <candidateLongName>Other parties</candidateLongName>
+                </candidate>
+            </candidates>
+        </country>
+        <country countryId="ES">
+            <candidates>
+                <candidate candidateId="ES01">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>PSOE/PSC</candidateAcronym>
+                    <candidateLongName>Partido Socialista Obrero Español + Partido de los Socialistas de Cataluña</candidateLongName>
+                </candidate>
+                <candidate candidateId="ES02">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>PP</candidateAcronym>
+                    <candidateLongName>Partido Popular</candidateLongName>
+                </candidate>
+                <candidate candidateId="ES03">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Coal (UP + IU + Catalunya en Comú + Barcelona en Comú)</candidateAcronym>
+                    <candidateLongName>Coalition Unidas Podemos Cambiar Europa (Unidas Podemos + Izquierda Unida + Catalunya en Comú + Barcelona en Comú)</candidateLongName>
+                </candidate>
+                <candidate candidateId="ES04">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Coal (EAJ-PNV + CC + CxG + Atarrabia Taldea + El Pi + Demòcrates Valencians)</candidateAcronym>
+                    <candidateLongName>Coalition por una Europa Solidaria (Euzko Alderdi Jeltzalea - Partido Nacionalista Vasco + Coalición Canaria + Compromiso por Galicia + Atarrabia Taldea + Proposta per les Illes Balears y Demòcrates Valencians)</candidateLongName>
+                </candidate>
+                <candidate candidateId="ES05">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>C's</candidateAcronym>
+                    <candidateLongName>Ciudadanos - Partido de la Ciudadanía</candidateLongName>
+                </candidate>
+                <candidate candidateId="ES06">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Coal (PdCat + JXCat)</candidateAcronym>
+                    <candidateLongName>Coal LLIURES PER EUROPA (JUNTS) (Partit Demòcrata Europeu Català  + Junts per Catalunya)</candidateLongName>
+                </candidate>
+                <candidate candidateId="ES07">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>VOX</candidateAcronym>
+                    <candidateLongName>VOX</candidateLongName>
+                </candidate>
+                <candidate candidateId="ES08">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Coal (ERC + Bildu + BNG)</candidateAcronym>
+                    <candidateLongName>Coalition Ahora Repúblicas (Esquerra Republicana de Catalunya + Euskal Herria Bildu + El Bloque Nacionalista Galego)</candidateLongName>
+                </candidate>
+                <candidate candidateId="ES09">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Coal (Compromís + En Marea +CHA + PCAS + Caballas + NC + Mès + CpM + Iniciativa + Izquierda Andalucista + PvE)</candidateAcronym>
+                    <candidateLongName>Coalition Compromiso por Europa (Compromís + En Marea +Chunta Aragonesista + Partido Castellano + Coalición Caballas + Nueva Canarias + Més per Mallorca + Coalición por Melilla + Iniciativa del Pueblo Andaluz + Izquierda Andalucista + Verdes de Europa)</candidateLongName>
+                </candidate>
+                <candidate candidateId="ES10">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>PACMA</candidateAcronym>
+                    <candidateLongName>Partido Animalista Contra el Maltrato Animal </candidateLongName>
+                </candidate>
+                <candidate candidateId="ES90">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Other parties</candidateAcronym>
+                    <candidateLongName>Other parties</candidateLongName>
+                </candidate>
+            </candidates>
+        </country>
+        <country countryId="FR">
+            <candidates>
+                <candidate candidateId="FR01">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>FI</candidateAcronym>
+                    <candidateLongName>France insoumise</candidateLongName>
+                </candidate>
+                <candidate candidateId="FR02">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Coal (PS + RDG + PP + N)</candidateAcronym>
+                    <candidateLongName>Coalition Envie d'Europe écologique et sociale (Parti Socialiste + Radicaux de Gauche + Place publique + Nouvelle Donne)</candidateLongName>
+                </candidate>
+                <candidate candidateId="FR03">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>EELV</candidateAcronym>
+                    <candidateLongName>Europe écologie-Les verts</candidateLongName>
+                </candidate>
+                <candidate candidateId="FR04">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>LR</candidateAcronym>
+                    <candidateLongName>Les Républicains - Union de la droite et du centre</candidateLongName>
+                </candidate>
+                <candidate candidateId="FR05">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>RN</candidateAcronym>
+                    <candidateLongName>Rassemblement national</candidateLongName>
+                </candidate>
+                <candidate candidateId="FR06">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>DLF + CNIP</candidateAcronym>
+                    <candidateLongName>Debout la France + CNIP</candidateLongName>
+                </candidate>
+                <candidate candidateId="FR07">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Coal (LREM + MoDem + A + MRSL)</candidateAcronym>
+                    <candidateLongName>Coalition Renaissance (La Republique En marche! + MoDem + Agir + Mouvement radical, social et libéral)</candidateLongName>
+                </candidate>
+                <candidate candidateId="FR08">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>PCF</candidateAcronym>
+                    <candidateLongName>Parti communiste français</candidateLongName>
+                </candidate>
+                <candidate candidateId="FR09">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>UDI</candidateAcronym>
+                    <candidateLongName>Union des Démocrates et Indépendants</candidateLongName>
+                </candidate>
+                <candidate candidateId="FR10">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Generation.s</candidateAcronym>
+                    <candidateLongName>Generation.s</candidateLongName>
+                </candidate>
+                <candidate candidateId="FR90">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Other parties</candidateAcronym>
+                    <candidateLongName>Other parties</candidateLongName>
+                </candidate>
+            </candidates>
+        </country>
+        <country countryId="IT">
+            <candidates>
+                <candidate candidateId="IT01">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>LN</candidateAcronym>
+                    <candidateLongName>Lega Salvini Premier</candidateLongName>
+                </candidate>
+                <candidate candidateId="IT02">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>PD</candidateAcronym>
+                    <candidateLongName>Partito Democratico (con Siamo Europei)</candidateLongName>
+                </candidate>
+                <candidate candidateId="IT03">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>FI</candidateAcronym>
+                    <candidateLongName>Forza Italia</candidateLongName>
+                </candidate>
+                <candidate candidateId="IT04">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>FDI</candidateAcronym>
+                    <candidateLongName>Fratelli d'Italia</candidateLongName>
+                </candidate>
+                <candidate candidateId="IT05">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>M5S</candidateAcronym>
+                    <candidateLongName>Movimento Cinque Stelle</candidateLongName>
+                </candidate>
+                <candidate candidateId="IT06">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Coal +E (+E + IC + PDE et al.)</candidateAcronym>
+                    <candidateLongName>Coalition +Europa (+ Europa - Italia in Comune - Partito Democratico Europeo).</candidateLongName>
+                </candidate>
+                <candidate candidateId="IT07">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Coal La Sinistra (SI + RC)</candidateAcronym>
+                    <candidateLongName>Coalition La Sinistra (Sinistra italiana + Rifondazione comunista + Altra Europa con Tsipras + Partito del Sud + Transform Itali + Convergenza Socialista)</candidateLongName>
+                </candidate>
+                <candidate candidateId="IT08">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>SVP</candidateAcronym>
+                    <candidateLongName>Südtiroler Volkspartei (Partito popolare sudtirolese)</candidateLongName>
+                </candidate>
+                <candidate candidateId="IT09">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>FdV (Verdi+Possibile et al.)</candidateAcronym>
+                    <candidateLongName>Coalition Federazione dei Verdi (Verdi + Possibile + Green Italia et al.).</candidateLongName>
+                </candidate>
+                <candidate candidateId="IT90">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Other parties</candidateAcronym>
+                    <candidateLongName>Other parties</candidateLongName>
+                </candidate>
+            </candidates>
+        </country>
+        <country countryId="CY">
+            <candidates>
+                <candidate candidateId="CY01">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>ΔΗΣΥ/DISY</candidateAcronym>
+                    <candidateLongName>Δημοκρατικός Συναγερμός/Democratic Rally</candidateLongName>
+                </candidate>
+                <candidate candidateId="CY02">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>ΑΚΕΛ/ΑΚΕL</candidateAcronym>
+                    <candidateLongName>Ανορθωτικό Κόμμα Εργαζόμενου Λαού/Progressive Party of Working People</candidateLongName>
+                </candidate>
+                <candidate candidateId="CY03">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>ΔΗΚΟ/DIKO</candidateAcronym>
+                    <candidateLongName>Δημοκρατικό Κόμμα/Democratic Party</candidateLongName>
+                </candidate>
+                <candidate candidateId="CY04">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>ΕΔΕΚ/ EDEK</candidateAcronym>
+                    <candidateLongName>ΕΔΕΚ Κίνημα Σοσιαλδημοκρατών/Movement for Social Democrats EDEK</candidateLongName>
+                </candidate>
+                <candidate candidateId="CY05">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>ΕΛΑΜ/ELAM</candidateAcronym>
+                    <candidateLongName>Εθνικό Λαϊκό Μέτωπο/National Popular Front</candidateLongName>
+                </candidate>
+                <candidate candidateId="CY06">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Συμμαχία-Οικολόγοι/Symmaxia-Ecologist</candidateAcronym>
+                    <candidateLongName>Συμμαχία Πολιτών-Κίνημα Οικολόγων/Citizens Alliance-Movement of Ecologist</candidateLongName>
+                </candidate>
+                <candidate candidateId="CY07">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>ΔHΠΑ/DIPA</candidateAcronym>
+                    <candidateLongName>Δημοκρατική Παράταξη / Democratic Alingment</candidateLongName>
+                </candidate>
+                <candidate candidateId="CY90">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Other parties</candidateAcronym>
+                    <candidateLongName>Other parties</candidateLongName>
+                </candidate>
+            </candidates>
+        </country>
+        <country countryId="LV">
+            <candidates>
+                <candidate candidateId="LV01">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>JV</candidateAcronym>
+                    <candidateLongName>Jaunā Vienotība</candidateLongName>
+                </candidate>
+                <candidate candidateId="LV02">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Coal. NA (TB/LNNK+VL!)</candidateAcronym>
+                    <candidateLongName>Coalition Nacionālā apvienība (Tēvzemei un Brīvībai/LNNK + Visu Latvijai!)</candidateLongName>
+                </candidate>
+                <candidate candidateId="LV03">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Saskaņa SDP</candidateAcronym>
+                    <candidateLongName>Saskaņa Sociāldemokrātiskā partija</candidateLongName>
+                </candidate>
+                <candidate candidateId="LV04">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Coal. ZZS (LZS+LZP)</candidateAcronym>
+                    <candidateLongName>Coalition Zaļo un Zemnieku Savienība (Latvijas Zemnieku Savienība + Latvijas Zaļā Partija)</candidateLongName>
+                </candidate>
+                <candidate candidateId="LV05">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>LRA</candidateAcronym>
+                    <candidateLongName>Latvijas Reģionu apvienība</candidateLongName>
+                </candidate>
+                <candidate candidateId="LV06">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>KPV LV</candidateAcronym>
+                    <candidateLongName>Kam pieder valsts?</candidateLongName>
+                </candidate>
+                <candidate candidateId="LV07">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>JKP</candidateAcronym>
+                    <candidateLongName>Jaunā konservatīvā partija</candidateLongName>
+                </candidate>
+                <candidate candidateId="LV08">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Coal. AP! (Latvijas attīstībai + Par!)</candidateAcronym>
+                    <candidateLongName>Coalition AP! (Latvijas attīstībai + Kustība Par!)</candidateLongName>
+                </candidate>
+                <candidate candidateId="LV09">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>LKS</candidateAcronym>
+                    <candidateLongName>Latvijas Krievu savienībā</candidateLongName>
+                </candidate>
+                <candidate candidateId="LV10">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>RP</candidateAcronym>
+                    <candidateLongName>Rīcības partija</candidateLongName>
+                </candidate>
+                <candidate candidateId="LV11">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Progresīvie</candidateAcronym>
+                    <candidateLongName>Progresīvie</candidateLongName>
+                </candidate>
+                <candidate candidateId="LV12">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>LSDSP</candidateAcronym>
+                    <candidateLongName>Latvijas Sociāldemokrātiskā strādnieku partija</candidateLongName>
+                </candidate>
+                <candidate candidateId="LV13">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>LN</candidateAcronym>
+                    <candidateLongName>Latviešu Nacionālisti</candidateLongName>
+                </candidate>
+                <candidate candidateId="LV14">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>JS</candidateAcronym>
+                    <candidateLongName>Jaunā Saskaņa</candidateLongName>
+                </candidate>
+                <candidate candidateId="LV15">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>CP</candidateAcronym>
+                    <candidateLongName>Centra partija</candidateLongName>
+                </candidate>
+                <candidate candidateId="LV16">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Coal. Atmoda</candidateAcronym>
+                    <candidateLongName>Coalition Atmoda</candidateLongName>
+                </candidate>
+                <candidate candidateId="LV90">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Other parties</candidateAcronym>
+                    <candidateLongName>Other parties</candidateLongName>
+                </candidate>
+            </candidates>
+        </country>
+        <country countryId="LT">
+            <candidates>
+                <candidate candidateId="LT01">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>DP</candidateAcronym>
+                    <candidateLongName>Darbo partija</candidateLongName>
+                </candidate>
+                <candidate candidateId="LT02">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>LLRA-KŠS</candidateAcronym>
+                    <candidateLongName>Lietuvos lenkų rinkimų akcija - krikščioniškų šeimų sąjunga</candidateLongName>
+                </candidate>
+                <candidate candidateId="LT03">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>LRLS</candidateAcronym>
+                    <candidateLongName>Lietuvos Respublikos liberalų sąjūdis</candidateLongName>
+                </candidate>
+                <candidate candidateId="LT04">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>LSDP</candidateAcronym>
+                    <candidateLongName>Lietuvos socialdemokratų partija</candidateLongName>
+                </candidate>
+                <candidate candidateId="LT05">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>LVŽS</candidateAcronym>
+                    <candidateLongName>Lietuvos Valstiečių ir Žaliųjų Sąjunga</candidateLongName>
+                </candidate>
+                <candidate candidateId="LT06">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>TT</candidateAcronym>
+                    <candidateLongName>Partija Tvarka ir teisingumas</candidateLongName>
+                </candidate>
+                <candidate candidateId="LT07">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>TS-LKD</candidateAcronym>
+                    <candidateLongName>Tėvynės sąjunga - Lietuvos krikščionys demokratai</candidateLongName>
+                </candidate>
+                <candidate candidateId="LT08">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>LCP</candidateAcronym>
+                    <candidateLongName>Lietuvos Centro Partija</candidateLongName>
+                </candidate>
+                <candidate candidateId="LT09">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>LSDDP</candidateAcronym>
+                    <candidateLongName>Lietuvos socialdemokratų darbo partija</candidateLongName>
+                </candidate>
+                <candidate candidateId="LT10">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>LŽP</candidateAcronym>
+                    <candidateLongName>Lietuvos žaliųjų partija</candidateLongName>
+                </candidate>
+                <candidate candidateId="LT11">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>LLS</candidateAcronym>
+                    <candidateLongName>Lietuvos laisvės sąjunga (liberalai)</candidateLongName>
+                </candidate>
+                <candidate candidateId="LT12">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>VKM-AMT</candidateAcronym>
+                    <candidateLongName>Visuomeninis rinkimų komitetas „Aušros Maldeikienės traukinys“</candidateLongName>
+                </candidate>
+                <candidate candidateId="LT13">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>VKM-PRPJ</candidateAcronym>
+                    <candidateLongName>Visuomeninis rinkimų komitetas „Prezidento Rolando Pakso judėjimas“</candidateLongName>
+                </candidate>
+                <candidate candidateId="LT14">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>VKM-VRSV</candidateAcronym>
+                    <candidateLongName>Visuomeninis rinkimų komitetas „Vytautas Radžvilas: susigrąžinkime valstybę!“</candidateLongName>
+                </candidate>
+                <candidate candidateId="LT90">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Other parties</candidateAcronym>
+                    <candidateLongName>Other parties</candidateLongName>
+                </candidate>
+            </candidates>
+        </country>
+        <country countryId="LU">
+            <candidates>
+                <candidate candidateId="LU01">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Déi Gréng/Les Verts</candidateAcronym>
+                    <candidateLongName>Déi Gréng/Les Verts</candidateLongName>
+                </candidate>
+                <candidate candidateId="LU02">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>LSAP/POSL</candidateAcronym>
+                    <candidateLongName>Lëtzebuerger Sozialistesch Aarbechterpartei/Parti ouvrier socialiste luxembourgeois</candidateLongName>
+                </candidate>
+                <candidate candidateId="LU03">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>DP/PD</candidateAcronym>
+                    <candidateLongName>Demokratesch Partei/Parti démocratique</candidateLongName>
+                </candidate>
+                <candidate candidateId="LU04">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Déi Lénk/La gauche</candidateAcronym>
+                    <candidateLongName>Déi Lénk/La gauche</candidateLongName>
+                </candidate>
+                <candidate candidateId="LU05">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>CSV/PCS</candidateAcronym>
+                    <candidateLongName>Chrëschtlech-Sozial Vollekspartei/Parti populaire chrétien-social</candidateLongName>
+                </candidate>
+                <candidate candidateId="LU06">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>ADR/PADR</candidateAcronym>
+                    <candidateLongName>Alternativ Demokratesch Reformpartei/Parti alternatif et démocratique de réformes</candidateLongName>
+                </candidate>
+                <candidate candidateId="LU07">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Piraten/Parti pirate</candidateAcronym>
+                    <candidateLongName>Piratepartei/Parti pirate</candidateLongName>
+                </candidate>
+                <candidate candidateId="LU08">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>KPL/PCL</candidateAcronym>
+                    <candidateLongName>Kommunistesch Partei vu Lëtzebuerg/Parti Communiste Luxembourgeois</candidateLongName>
+                </candidate>
+                <candidate candidateId="LU09">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Déi Konservativ/Les Conservateurs</candidateAcronym>
+                    <candidateLongName>Déi Konservativ/Les Conservateurs</candidateLongName>
+                </candidate>
+                <candidate candidateId="LU10">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Volt/Volt Europe</candidateAcronym>
+                    <candidateLongName>Volt</candidateLongName>
+                </candidate>
+            </candidates>
+        </country>
+        <country countryId="HU">
+            <candidates>
+                <candidate candidateId="HU01">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>DK</candidateAcronym>
+                    <candidateLongName>Demokratikus Koalíció</candidateLongName>
+                </candidate>
+                <candidate candidateId="HU02">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Coal (FIDESZ + KDNP)</candidateAcronym>
+                    <candidateLongName>Coalition (FIDESZ - Magyar Polgári Szövetség + Kereszténydemokrata Néppárt)</candidateLongName>
+                </candidate>
+                <candidate candidateId="HU03">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>JOBBIK</candidateAcronym>
+                    <candidateLongName>Jobbik Magyarországért Mozgalom</candidateLongName>
+                </candidate>
+                <candidate candidateId="HU04">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>LMP</candidateAcronym>
+                    <candidateLongName>Lehet Más a Politika</candidateLongName>
+                </candidate>
+                <candidate candidateId="HU05">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>MKKP</candidateAcronym>
+                    <candidateLongName>Magyar Kétfarkú Kutyapárt</candidateLongName>
+                </candidate>
+                <candidate candidateId="HU06">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Momentum</candidateAcronym>
+                    <candidateLongName>Momentum Mozgalom</candidateLongName>
+                </candidate>
+                <candidate candidateId="HU07">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Coal (MSZP + Párbeszéd)</candidateAcronym>
+                    <candidateLongName>Coaltion (Magyar Szocialista Párt + Párbeszéd Magyarországért)</candidateLongName>
+                </candidate>
+                <candidate candidateId="HU08">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Mi Hazánk</candidateAcronym>
+                    <candidateLongName>Mi Hazánk Mozgalom</candidateLongName>
+                </candidate>
+                <candidate candidateId="HU90">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Other parties</candidateAcronym>
+                    <candidateLongName>Other parties</candidateLongName>
+                </candidate>
+            </candidates>
+        </country>
+        <country countryId="MT">
+            <candidates>
+                <candidate candidateId="MT01">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>PN/NP</candidateAcronym>
+                    <candidateLongName>Partit Nazzjonalista/Nationalist Party</candidateLongName>
+                </candidate>
+                <candidate candidateId="MT02">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>PL/MLP</candidateAcronym>
+                    <candidateLongName>Partit Laburista/Malta Labour Party</candidateLongName>
+                </candidate>
+                <candidate candidateId="MT03">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>AD/DA</candidateAcronym>
+                    <candidateLongName>Alternattiva Demokratika/Democratic Alternative</candidateLongName>
+                </candidate>
+                <candidate candidateId="MT04">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>PD</candidateAcronym>
+                    <candidateLongName>Partit Demokratiku/Democratic Party</candidateLongName>
+                </candidate>
+                <candidate candidateId="MT90">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Other parties</candidateAcronym>
+                    <candidateLongName>Other parties</candidateLongName>
+                </candidate>
+            </candidates>
+        </country>
+        <country countryId="NL">
+            <candidates>
+                <candidate candidateId="NL01">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>CDA</candidateAcronym>
+                    <candidateLongName>Christen-Democratisch Appèl</candidateLongName>
+                </candidate>
+                <candidate candidateId="NL02">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>PvdA</candidateAcronym>
+                    <candidateLongName>Partij van de Arbeid</candidateLongName>
+                </candidate>
+                <candidate candidateId="NL03">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>SP</candidateAcronym>
+                    <candidateLongName>Socialistische Partij</candidateLongName>
+                </candidate>
+                <candidate candidateId="NL04">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>VVD</candidateAcronym>
+                    <candidateLongName>Volkspartij voor Vrijheid en Democratie</candidateLongName>
+                </candidate>
+                <candidate candidateId="NL05">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>GroenLinks</candidateAcronym>
+                    <candidateLongName>GroenLinks</candidateLongName>
+                </candidate>
+                <candidate candidateId="NL06">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>PVV</candidateAcronym>
+                    <candidateLongName>Partij voor de Vrijheid</candidateLongName>
+                </candidate>
+                <candidate candidateId="NL07">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>D66</candidateAcronym>
+                    <candidateLongName>Democraten 66</candidateLongName>
+                </candidate>
+                <candidate candidateId="NL08">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>PvdD</candidateAcronym>
+                    <candidateLongName>Partij voor de Dieren</candidateLongName>
+                </candidate>
+                <candidate candidateId="NL09">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Coalition CU - SGP</candidateAcronym>
+                    <candidateLongName>ChristenUnie - Staatkundig Gereformeerde Partij</candidateLongName>
+                </candidate>
+                <candidate candidateId="NL10">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>50+</candidateAcronym>
+                    <candidateLongName>50Plus</candidateLongName>
+                </candidate>
+                <candidate candidateId="NL11">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>DENK</candidateAcronym>
+                    <candidateLongName>DENK</candidateLongName>
+                </candidate>
+                <candidate candidateId="NL12">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>FvD</candidateAcronym>
+                    <candidateLongName>Forum voor Democratie</candidateLongName>
+                </candidate>
+                <candidate candidateId="NL13">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Volt</candidateAcronym>
+                    <candidateLongName>Volt</candidateLongName>
+                </candidate>
+                <candidate candidateId="NL90">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Other parties</candidateAcronym>
+                    <candidateLongName>Other parties</candidateLongName>
+                </candidate>
+            </candidates>
+        </country>
+        <country countryId="AT">
+            <candidates>
+                <candidate candidateId="AT01">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>SPÖ</candidateAcronym>
+                    <candidateLongName>Sozialdemokratische Partei Österreich</candidateLongName>
+                </candidate>
+                <candidate candidateId="AT02">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>ÖVP</candidateAcronym>
+                    <candidateLongName>Österreichische Volkspartei</candidateLongName>
+                </candidate>
+                <candidate candidateId="AT03">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>FPÖ</candidateAcronym>
+                    <candidateLongName>Freiheitliche Partei Österreichs</candidateLongName>
+                </candidate>
+                <candidate candidateId="AT04">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>GRÜNE</candidateAcronym>
+                    <candidateLongName>Die Grünen - Die Grüne Alternative</candidateLongName>
+                </candidate>
+                <candidate candidateId="AT05">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>NEOS</candidateAcronym>
+                    <candidateLongName>NEOS - Das neue Österreich</candidateLongName>
+                </candidate>
+                <candidate candidateId="AT06">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>JETZT</candidateAcronym>
+                    <candidateLongName>JETZT - Liste Pilz</candidateLongName>
+                </candidate>
+                <candidate candidateId="AT90">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Other parties</candidateAcronym>
+                    <candidateLongName>Other parties</candidateLongName>
+                </candidate>
+            </candidates>
+        </country>
+        <country countryId="PL">
+            <candidates>
+                <candidate candidateId="PL01">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>PiS</candidateAcronym>
+                    <candidateLongName>Prawo i Sprawiedliwość</candidateLongName>
+                </candidate>
+                <candidate candidateId="PL02">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Konfederacja</candidateAcronym>
+                    <candidateLongName>Konfederacja KORWiN Braun Liroy Narodowcy</candidateLongName>
+                </candidate>
+                <candidate candidateId="PL03">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Kukiz'15</candidateAcronym>
+                    <candidateLongName>Kukiz'15</candidateLongName>
+                </candidate>
+                <candidate candidateId="PL04">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Wiosna</candidateAcronym>
+                    <candidateLongName>Wiosna Roberta Biedronia</candidateLongName>
+                </candidate>
+                <candidate candidateId="PL05">
+                    <candidateType>COALITION</candidateType>
+                    <candidateAcronym>Coal KE (PO + PSL + SLD + .N + Z)</candidateAcronym>
+                    <candidateLongName>Coalition Koalicja Europejska (Platforma Obywatelska + Polskie Stronnictwo Ludowe + Sojusz Lewicy Demokratycznej + Nowoczesna + Partia Zieloni)</candidateLongName>
+                    <coalitionMembers>PL06,PL07</coalitionMembers>
+                </candidate>
+                <candidate candidateId="PL06">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>PO + PSL + Ind.</candidateAcronym>
+                    <candidateLongName>Platforma Obywatelska + Polskie Stronnictwo Ludowe + Independent</candidateLongName>
+                    <memberOfCoalition>PL05</memberOfCoalition>
+                </candidate>
+                <candidate candidateId="PL07">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>SLD</candidateAcronym>
+                    <candidateLongName>Sojusz Lewicy Demokratycznej</candidateLongName>
+                    <memberOfCoalition>PL05</memberOfCoalition>
+                </candidate>
+                <candidate candidateId="PL08">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Polska Fair Play</candidateAcronym>
+                    <candidateLongName>Polska Fair Play Bezpartyjni Gwiazdowski </candidateLongName>
+                </candidate>
+                <candidate candidateId="PL09">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Coal Lewica Razem (PR + UP + RSS)</candidateAcronym>
+                    <candidateLongName>Coalition Lewica Razem (Partia Razem + Unia Pracy + Ruch Sprawiedliwości Społecznej)</candidateLongName>
+                </candidate>
+                <candidate candidateId="PL90">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Other parties</candidateAcronym>
+                    <candidateLongName>Other parties</candidateLongName>
+                </candidate>
+            </candidates>
+        </country>
+        <country countryId="PT">
+            <candidates>
+                <candidate candidateId="PT01">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>B.E.</candidateAcronym>
+                    <candidateLongName>Bloco de Esquerda</candidateLongName>
+                </candidate>
+                <candidate candidateId="PT02">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>CDU (PCP + PEV)</candidateAcronym>
+                    <candidateLongName>Coligação Democrática Unitária (Partido Comunista Português + Partido Ecologista os Verdes)</candidateLongName>
+                </candidate>
+                <candidate candidateId="PT03">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>PS</candidateAcronym>
+                    <candidateLongName>Partido Socialista</candidateLongName>
+                </candidate>
+                <candidate candidateId="PT04">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>PSD</candidateAcronym>
+                    <candidateLongName>Partido Social Democrata</candidateLongName>
+                </candidate>
+                <candidate candidateId="PT05">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>CDS-PP</candidateAcronym>
+                    <candidateLongName>CDS - Partido Popular</candidateLongName>
+                </candidate>
+                <candidate candidateId="PT06">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>PAN</candidateAcronym>
+                    <candidateLongName>Pessoas–Animais–Natureza</candidateLongName>
+                </candidate>
+                <candidate candidateId="PT07">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>A</candidateAcronym>
+                    <candidateLongName>Aliança</candidateLongName>
+                </candidate>
+                <candidate candidateId="PT90">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Other parties</candidateAcronym>
+                    <candidateLongName>Other parties</candidateLongName>
+                </candidate>
+            </candidates>
+        </country>
+        <country countryId="RO">
+            <candidates>
+                <candidate candidateId="RO01">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>PSD</candidateAcronym>
+                    <candidateLongName>Partidul Social Democrat</candidateLongName>
+                </candidate>
+                <candidate candidateId="RO02">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>ALDE</candidateAcronym>
+                    <candidateLongName>Alianța Liberalilor și Democraților</candidateLongName>
+                </candidate>
+                <candidate candidateId="RO03">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>PNL</candidateAcronym>
+                    <candidateLongName>Partidul Naţional Liberal</candidateLongName>
+                </candidate>
+                <candidate candidateId="RO04">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>UDMR</candidateAcronym>
+                    <candidateLongName>Romániai Magyar Demokrata Szövetség/Uniunea Democrată Maghiară din România</candidateLongName>
+                </candidate>
+                <candidate candidateId="RO05">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>PMP</candidateAcronym>
+                    <candidateLongName>Partidul Mișcarea Populară</candidateLongName>
+                </candidate>
+                <candidate candidateId="RO06">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Pro Romania</candidateAcronym>
+                    <candidateLongName>Partidul Pro Romania</candidateLongName>
+                </candidate>
+                <candidate candidateId="RO07">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Coal. Alliance 2020 (USR+PLUS)</candidateAcronym>
+                    <candidateLongName>Coalition 2020 USR + PLUS Alliance (Uniunea Salvați România + Partidul Libertății, Unității și Solidarității)</candidateLongName>
+                </candidate>
+                <candidate candidateId="RO90">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Other parties</candidateAcronym>
+                    <candidateLongName>Other parties</candidateLongName>
+                </candidate>
+            </candidates>
+        </country>
+        <country countryId="SI">
+            <candidates>
+                <candidate candidateId="SI01">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Coal (SDS + SLS)</candidateAcronym>
+                    <candidateLongName>Coalition (Slovenska demokratska stranka + Slovenska ljudska stranka)</candidateLongName>
+                </candidate>
+                <candidate candidateId="SI02">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>SD</candidateAcronym>
+                    <candidateLongName>Socialni demokrati</candidateLongName>
+                </candidate>
+                <candidate candidateId="SI03">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>DeSUS</candidateAcronym>
+                    <candidateLongName>Demokratična stranka upokojencev Slovenije</candidateLongName>
+                </candidate>
+                <candidate candidateId="SI04">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>N.Si</candidateAcronym>
+                    <candidateLongName>Nova Slovenija</candidateLongName>
+                </candidate>
+                <candidate candidateId="SI05">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>SNS</candidateAcronym>
+                    <candidateLongName>Slovenska Nacionalna Stranka</candidateLongName>
+                </candidate>
+                <candidate candidateId="SI06">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>SMC</candidateAcronym>
+                    <candidateLongName>Stranka modernega centra</candidateLongName>
+                </candidate>
+                <candidate candidateId="SI07">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>SAB</candidateAcronym>
+                    <candidateLongName>Stranka alenke bratušek</candidateLongName>
+                </candidate>
+                <candidate candidateId="SI08">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>LEVICA</candidateAcronym>
+                    <candidateLongName>LEVICA</candidateLongName>
+                </candidate>
+                <candidate candidateId="SI09">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>LMŠ</candidateAcronym>
+                    <candidateLongName>Lista Marjana Šarca</candidateLongName>
+                </candidate>
+                <candidate candidateId="SI10">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>DOM</candidateAcronym>
+                    <candidateLongName>Domovinska Liga</candidateLongName>
+                </candidate>
+                <candidate candidateId="SI11">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Povežimo se</candidateAcronym>
+                    <candidateLongName>Povežimo se</candidateLongName>
+                </candidate>
+                <candidate candidateId="SI12">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>DD</candidateAcronym>
+                    <candidateLongName>Dobra Država</candidateLongName>
+                </candidate>
+                <candidate candidateId="SI13">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>ZSI</candidateAcronym>
+                    <candidateLongName>ZSI - Gibanje Zedinjena Slovenija</candidateLongName>
+                </candidate>
+                <candidate candidateId="SI14">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Z.SI</candidateAcronym>
+                    <candidateLongName>Zeleni Slovenije</candidateLongName>
+                </candidate>
+                <candidate candidateId="SI90">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Other parties</candidateAcronym>
+                    <candidateLongName>Other parties</candidateLongName>
+                </candidate>
+            </candidates>
+        </country>
+        <country countryId="SK">
+            <candidates>
+                <candidate candidateId="SK01">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>KDH</candidateAcronym>
+                    <candidateLongName>Kresťanskodemokratické hnutie</candidateLongName>
+                </candidate>
+                <candidate candidateId="SK02">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>SaS</candidateAcronym>
+                    <candidateLongName>Sloboda a Solidarita</candidateLongName>
+                </candidate>
+                <candidate candidateId="SK03">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>SNS</candidateAcronym>
+                    <candidateLongName>Slovenská národná strana</candidateLongName>
+                </candidate>
+                <candidate candidateId="SK04">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>SMER-SD</candidateAcronym>
+                    <candidateLongName>SMER - Sociálna demokracia</candidateLongName>
+                </candidate>
+                <candidate candidateId="SK05">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>SMK-MPK</candidateAcronym>
+                    <candidateLongName>Strana mad'arskej komunity - Magyar Közösség Pártja</candidateLongName>
+                </candidate>
+                <candidate candidateId="SK06">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Coal (OL'aNO + NOVA)</candidateAcronym>
+                    <candidateLongName>Coalition (Obyčajní Ľudia a nezávislé osobnosti + Nová väčšina - Dohoda)</candidateLongName>
+                </candidate>
+                <candidate candidateId="SK07">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>MOST-HID</candidateAcronym>
+                    <candidateLongName>Most-Híd</candidateLongName>
+                </candidate>
+                <candidate candidateId="SK08">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>ĽSNS</candidateAcronym>
+                    <candidateLongName>Kotleba - Ľudová strana Naše Slovensko</candidateLongName>
+                </candidate>
+                <candidate candidateId="SK09">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Sme Rodina</candidateAcronym>
+                    <candidateLongName>SME RODINA - Boris Kollár</candidateLongName>
+                </candidate>
+                <candidate candidateId="SK10">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Coal (PS + SPOLU)</candidateAcronym>
+                    <candidateLongName>Coalition (Progresívne Slovensko + SPOLU - občianska demokracia)</candidateLongName>
+                </candidate>
+                <candidate candidateId="SK11">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>KÚ</candidateAcronym>
+                    <candidateLongName>Kresťanská únia</candidateLongName>
+                </candidate>
+                <candidate candidateId="SK12">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>KDŽP</candidateAcronym>
+                    <candidateLongName>Kresťanská demokracia - Život a prosperita</candidateLongName>
+                </candidate>
+                <candidate candidateId="SK90">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Other parties</candidateAcronym>
+                    <candidateLongName>Other parties</candidateLongName>
+                </candidate>
+            </candidates>
+        </country>
+        <country countryId="FI">
+            <candidates>
+                <candidate candidateId="FI01">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>KESK</candidateAcronym>
+                    <candidateLongName>Suomen Keskusta</candidateLongName>
+                </candidate>
+                <candidate candidateId="FI02">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>KOK</candidateAcronym>
+                    <candidateLongName>Kansallinen Kokoomus</candidateLongName>
+                </candidate>
+                <candidate candidateId="FI03">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>SDP</candidateAcronym>
+                    <candidateLongName>Suomen Sosialidemokraattinen Puolue/Finlands Socialdemokratiska Parti</candidateLongName>
+                </candidate>
+                <candidate candidateId="FI04">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>VAS</candidateAcronym>
+                    <candidateLongName>Vasemmistoliitto </candidateLongName>
+                </candidate>
+                <candidate candidateId="FI05">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>VIHR</candidateAcronym>
+                    <candidateLongName>Vihreä liitto  </candidateLongName>
+                </candidate>
+                <candidate candidateId="FI06">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>SFP (RKP)</candidateAcronym>
+                    <candidateLongName>Svenska folkpartiet (Ruotsalainen kansanpuolue)</candidateLongName>
+                </candidate>
+                <candidate candidateId="FI07">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>PS</candidateAcronym>
+                    <candidateLongName>Perussuomalaiset</candidateLongName>
+                </candidate>
+                <candidate candidateId="FI08">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>KD</candidateAcronym>
+                    <candidateLongName>Suomen Kristillisdemokraatit</candidateLongName>
+                </candidate>
+                <candidate candidateId="FI09">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>SIN</candidateAcronym>
+                    <candidateLongName>Sininen tulevaisuus</candidateLongName>
+                </candidate>
+                <candidate candidateId="FI10">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>PP</candidateAcronym>
+                    <candidateLongName>Piraattipuolue</candidateLongName>
+                </candidate>
+                <candidate candidateId="FI90">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Other parties</candidateAcronym>
+                    <candidateLongName>Other parties</candidateLongName>
+                </candidate>
+            </candidates>
+        </country>
+        <country countryId="SE">
+            <candidates>
+                <candidate candidateId="SE01">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>V</candidateAcronym>
+                    <candidateLongName>Vänsterpartiet</candidateLongName>
+                </candidate>
+                <candidate candidateId="SE02">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>S</candidateAcronym>
+                    <candidateLongName>Socialdemokraterna</candidateLongName>
+                </candidate>
+                <candidate candidateId="SE03">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>C</candidateAcronym>
+                    <candidateLongName>Centerpartiet</candidateLongName>
+                </candidate>
+                <candidate candidateId="SE04">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>L</candidateAcronym>
+                    <candidateLongName>Liberalerna</candidateLongName>
+                </candidate>
+                <candidate candidateId="SE05">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>M</candidateAcronym>
+                    <candidateLongName>Moderaterna</candidateLongName>
+                </candidate>
+                <candidate candidateId="SE06">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>KD</candidateAcronym>
+                    <candidateLongName>Kristdemokraterna</candidateLongName>
+                </candidate>
+                <candidate candidateId="SE07">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>MP</candidateAcronym>
+                    <candidateLongName>Miljöpartiet de Gröna</candidateLongName>
+                </candidate>
+                <candidate candidateId="SE08">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>SD</candidateAcronym>
+                    <candidateLongName>Sverigedemokraterna</candidateLongName>
+                </candidate>
+                <candidate candidateId="SE09">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>FI</candidateAcronym>
+                    <candidateLongName>Feministiskt Initiativ</candidateLongName>
+                </candidate>
+                <candidate candidateId="SE90">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Other parties</candidateAcronym>
+                    <candidateLongName>Other parties</candidateLongName>
+                </candidate>
+            </candidates>
+        </country>
+        <country countryId="UK">
+            <candidates>
+                <candidate candidateId="UK01">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>SF</candidateAcronym>
+                    <candidateLongName>Sinn Féin</candidateLongName>
+                </candidate>
+                <candidate candidateId="UK02">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>DUP</candidateAcronym>
+                    <candidateLongName>Democratic Unionist Party</candidateLongName>
+                </candidate>
+                <candidate candidateId="UK03">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>UUP</candidateAcronym>
+                    <candidateLongName>Ulster Unionist Party</candidateLongName>
+                </candidate>
+                <candidate candidateId="UK04">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>SDLP</candidateAcronym>
+                    <candidateLongName>Social Democratic &amp; Labour Party</candidateLongName>
+                </candidate>
+                <candidate candidateId="UK05">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>TUV</candidateAcronym>
+                    <candidateLongName>Traditional Unionist Voice</candidateLongName>
+                </candidate>
+                <candidate candidateId="UK06">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>APNI</candidateAcronym>
+                    <candidateLongName>Alliance Party</candidateLongName>
+                </candidate>
+                <candidate candidateId="UK07">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Cons.</candidateAcronym>
+                    <candidateLongName>Conservative and Unionist Party</candidateLongName>
+                </candidate>
+                <candidate candidateId="UK08">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Lab.</candidateAcronym>
+                    <candidateLongName>Labour Party</candidateLongName>
+                </candidate>
+                <candidate candidateId="UK09">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>UKIP</candidateAcronym>
+                    <candidateLongName>United Kingdom Independence Party</candidateLongName>
+                </candidate>
+                <candidate candidateId="UK10">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>SNP</candidateAcronym>
+                    <candidateLongName>Scottish National Party</candidateLongName>
+                </candidate>
+                <candidate candidateId="UK11">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>PL-PW</candidateAcronym>
+                    <candidateLongName>Plaid Cymru - Party of Wales</candidateLongName>
+                </candidate>
+                <candidate candidateId="UK12">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Lib dems</candidateAcronym>
+                    <candidateLongName>Liberal Democrats</candidateLongName>
+                </candidate>
+                <candidate candidateId="UK13">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>GP</candidateAcronym>
+                    <candidateLongName>Green Party</candidateLongName>
+                </candidate>
+                <candidate candidateId="UK14">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Change UK</candidateAcronym>
+                    <candidateLongName>Change UK</candidateLongName>
+                </candidate>
+                <candidate candidateId="UK15">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Brexit Party</candidateAcronym>
+                    <candidateLongName>Brexit Party</candidateLongName>
+                </candidate>
+                <candidate candidateId="UK90">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Other parties NI</candidateAcronym>
+                    <candidateLongName>Other parties Northern Ireland</candidateLongName>
+                </candidate>
+                <candidate candidateId="UK91">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Other parties GB</candidateAcronym>
+                    <candidateLongName>Other parties Great Britain</candidateLongName>
+                </candidate>
+            </candidates>
+        </country>
+        <country countryId="GB">
+            <candidates>
+                <candidate candidateId="UK07">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Cons.</candidateAcronym>
+                    <candidateLongName>Conservative and Unionist Party</candidateLongName>
+                </candidate>
+                <candidate candidateId="UK08">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Lab.</candidateAcronym>
+                    <candidateLongName>Labour Party</candidateLongName>
+                </candidate>
+                <candidate candidateId="UK09">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>UKIP</candidateAcronym>
+                    <candidateLongName>United Kingdom Independence Party</candidateLongName>
+                </candidate>
+                <candidate candidateId="UK10">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>SNP</candidateAcronym>
+                    <candidateLongName>Scottish National Party</candidateLongName>
+                </candidate>
+                <candidate candidateId="UK11">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>PL-PW</candidateAcronym>
+                    <candidateLongName>Plaid Cymru - Party of Wales</candidateLongName>
+                </candidate>
+                <candidate candidateId="UK12">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Lib dems</candidateAcronym>
+                    <candidateLongName>Liberal Democrats</candidateLongName>
+                </candidate>
+                <candidate candidateId="UK13">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>GP</candidateAcronym>
+                    <candidateLongName>Green Party</candidateLongName>
+                </candidate>
+                <candidate candidateId="UK14">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Change UK</candidateAcronym>
+                    <candidateLongName>Change UK</candidateLongName>
+                </candidate>
+                <candidate candidateId="UK15">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Brexit Party</candidateAcronym>
+                    <candidateLongName>Brexit Party</candidateLongName>
+                </candidate>
+                <candidate candidateId="UK91">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Other parties GB</candidateAcronym>
+                    <candidateLongName>Other parties Great Britain</candidateLongName>
+                </candidate>
+            </candidates>
+        </country>
+        <country countryId="NI">
+            <candidates>
+                <candidate candidateId="UK01">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>SF</candidateAcronym>
+                    <candidateLongName>Sinn Féin</candidateLongName>
+                </candidate>
+                <candidate candidateId="UK02">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>DUP</candidateAcronym>
+                    <candidateLongName>Democratic Unionist Party</candidateLongName>
+                </candidate>
+                <candidate candidateId="UK03">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>UUP</candidateAcronym>
+                    <candidateLongName>Ulster Unionist Party</candidateLongName>
+                </candidate>
+                <candidate candidateId="UK04">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>SDLP</candidateAcronym>
+                    <candidateLongName>Social Democratic &amp; Labour Party</candidateLongName>
+                </candidate>
+                <candidate candidateId="UK05">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>TUV</candidateAcronym>
+                    <candidateLongName>Traditional Unionist Voice</candidateLongName>
+                </candidate>
+                <candidate candidateId="UK06">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>APNI</candidateAcronym>
+                    <candidateLongName>Alliance Party</candidateLongName>
+                </candidate>
+                <candidate candidateId="UK90">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Other parties NI</candidateAcronym>
+                    <candidateLongName>Other parties Northern Ireland</candidateLongName>
+                </candidate>
+            </candidates>
+        </country>
+        <country countryId="HR">
+            <candidates>
+                <candidate candidateId="HR01">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>HDZ</candidateAcronym>
+                    <candidateLongName>Hrvatska demokratska zajednica</candidateLongName>
+                </candidate>
+                <candidate candidateId="HR02">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>SDP</candidateAcronym>
+                    <candidateLongName>Socijaldemokratska partija Hrvatske</candidateLongName>
+                </candidate>
+                <candidate candidateId="HR03">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>HNS</candidateAcronym>
+                    <candidateLongName>Hrvatska narodna stranka</candidateLongName>
+                </candidate>
+                <candidate candidateId="HR04">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>MOST</candidateAcronym>
+                    <candidateLongName>Most nezavisnih lista</candidateLongName>
+                </candidate>
+                <candidate candidateId="HR05">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Coal (PAMETNO + UK)</candidateAcronym>
+                    <candidateLongName>Coalition (Pametno + Unija Kvarnera coalition)</candidateLongName>
+                </candidate>
+                <candidate candidateId="HR06">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>ŽIVI ZID</candidateAcronym>
+                    <candidateLongName>Živi zid</candidateLongName>
+                </candidate>
+                <candidate candidateId="HR07">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Bandić Milan 365</candidateAcronym>
+                    <candidateLongName>Bandić Milan 365 - Stranka rada i solidarnosti</candidateLongName>
+                </candidate>
+                <candidate candidateId="HR08">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Coal (NHR + HSP)</candidateAcronym>
+                    <candidateLongName>Coalition (Neovisni za Hrvatsku + Hrvatska Stranka Prava)</candidateLongName>
+                </candidate>
+                <candidate candidateId="HR09">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>START</candidateAcronym>
+                    <candidateLongName>Stranka antikorupcije, razvoja i transparentnosti</candidateLongName>
+                </candidate>
+                <candidate candidateId="HR10">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Coal Hrv. Suverenisti</candidateAcronym>
+                    <candidateLongName>Coalition Hrvatski suverenisti (HRAST - Pokret za uspješnu Hrvatsku + Hrvatska konzervativna stranka - HKS + Hrvatska stranka prava de. Ante Starrčević - HSP AS + Ujedinjeni hrvatski domoljubi - UHD)</candidateLongName>
+                </candidate>
+                <candidate candidateId="HR11">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Coal AMS (HL + PGS + HSU + IDS + HSS + GLAS + Demokrati)</candidateAcronym>
+                    <candidateLongName>Coalition Amsterdamska koalicija (Hrvatski laburisti + Primorsko goranski savez + Hrvatska stranka umirovljenika + Istarski demokratski sabor + Hrvatska seljačka stranka + Građansko-liberalni savez + Demokrati)</candidateLongName>
+                </candidate>
+                <candidate candidateId="HR12">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Coal. Zelena ljevica</candidateAcronym>
+                    <candidateLongName>Coalition Zelena ljevica (Možemo! - politička platforma + Nova ljevica + Održivi razvoj Hrvatske - ORaH)</candidateLongName>
+                </candidate>
+                <candidate candidateId="HR13">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Mislav Kolakušić</candidateAcronym>
+                    <candidateLongName>Independent Mislav Kolakušić</candidateLongName>
+                </candidate>
+                <candidate candidateId="HR14">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Marijana Petir</candidateAcronym>
+                    <candidateLongName>Independent Marijana Petir</candidateLongName>
+                </candidate>
+                <candidate candidateId="HR90">
+                    <candidateType>PARTY</candidateType>
+                    <candidateAcronym>Other parties</candidateAcronym>
+                    <candidateLongName>Other parties</candidateLongName>
+                </candidate>
+            </candidates>
+        </country>
+    </countries>
+</parties>

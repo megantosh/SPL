@@ -97,7 +97,7 @@ EEP: European People's Party (Christian Democrats)
 
 ## Dataset
 
-- Polls go back to January 2018.
+- Polls go back to December 2017.
 
 
 - **File Names:** with αα being the country’s ISO 3166-1 alpha-2 code:
@@ -123,6 +123,8 @@ EEP: European People's Party (Christian Democrats)
 ## Dataset Preprocessing
 
 - da wo die sample size nicht bekaonnt ist, z.b. Forsa am 2018-02-05	2018-02-09, wird der Eintrag gelöscht statt normiert / average, um die accuracy zu
+
+- determine duration of questionnaire
  
 ## Research Question
 
