@@ -10,36 +10,53 @@
 # detach("package:dplyr")  
 # detach("package:stats")  
 
-# library(tidyverse)
-library(dplyr)
-library(tibble)
-library(readr)
-library(xml2)
-library(stats)
+library(tidyverse)
+# library(dplyr) # incl. in tidyverse - used for pipes to manipulate/inspect data
+# library(tibble) # incl. in tidyverse - based on data.frame, easier representation
+# library(readr) # incl. in tidyverse - to import datasets
+library(xml2) # to import datasets from EU website
+library(stats) # for statistical calculations
 
 # Global Variables -------------------------------------------------------------
 
 # Sorted as adopted from http://publications.europa.eu/code/pdf/370000en.htm
-## Greece is 'gr' and not 'el' (Hellenic Republic)   - U.K. is 'gb-gbn' and not 'uk' for Great Britain + Northern Ireland
-eu_country_codes <- c("be", "bg", "cz", "dk", "de", "ee", "ie", "gr", "es", "fr", "hr", "it","cy", "lv", "lt", "lu", "hu",
-                     "mt", "nl", "at", "pl", "pt", "ro", "si","sk", "fi", "se", "gb-gbn")
-eu_country_names <- c("Belgium", "Bulgaria", "Czechia", "Denmark", "Germany", "Estonia", "Ireland", "Greece", "Spain",
-                      "France", "Croatia", "Italy", "Cyprus", "Latvia", "Lithuania", "Luxembourg", "Hungary", "Malta", 
-                      "Netherlands", "Austria", "Poland", "Portugal", "Romania", "Slovenia", "Slovakia", "Finland", 
-                      "Sweden", "United Kingdom") 
-# Europarties: EU Parliament Political Groups sorted by affiliation (extreme left to extreme right)
-# source: https://en.wikipedia.org/wiki/European_political_party
-europarties_2014 <- c("GUE/NGL", "G/EFA", "S&D", "ALDE", "EEP", "ECR", "EFDD", "ENF/EAPN", "NI", "UnAff")
-# xTmp: Ex tempore (at time of research)   --   ALDE includes french Macron's Renaissance
-europarties_2019 <- c("GUE/NGL", "G/EFA", "S&D", "UnAff1 - Volt", "ro_PSD (xTmp S&D)", "ALDE", "ro_ALDE (xTmp)","EEP", 
-                      "hu_Fidesz (xTmp EPP)", "ECR","UnAff2 - it_M5S + all.", "EFDD", "UnAff3 - uk_BRExit", "ENF/EAPN", "NI")
+# Ambiguities:
+#             Greece is 'gr' and not 'el' (Hellenic Republic)
+#             U.K. is 'gb-gbn' and not 'uk' for Great Britain + Northern Ireland
+eu_country_codes <- c("be", "bg", "cz", "dk", "de", "ee", "ie", "gr", "es",
+                      "fr", "hr", "it","cy", "lv", "lt", "lu", "hu", "mt", "nl",
+                      "at", "pl", "pt", "ro", "si","sk", "fi", "se", "gb-gbn")
+eu_country_names <- c("Belgium", "Bulgaria", "Czechia", "Denmark", "Germany",
+                      "Estonia", "Ireland", "Greece", "Spain", "France", 
+                      "Croatia", "Italy", "Cyprus", "Latvia", "Lithuania", 
+                      "Luxembourg", "Hungary", "Malta", "Netherlands", "Austria",
+                      "Poland", "Portugal", "Romania", "Slovenia", "Slovakia", 
+                      "Finland", "Sweden", "United Kingdom") 
+# Europarties: EU Parliament Political Groups sorted by affiliation 
+#              (extreme left to extreme right)
+# source: https://en.wikipedia.org/wiki/European_political_party and 
+#         https://election-results.eu/seats-political-group-country/2019-2024/
+# 2014 data can be used to compare with new parties
+europarties_2014 <- c("GUE/NGL", "G/EFA", "S&D", "ALDE", "EPP", "ECR", "EFDD", 
+                      "ENF/EAPN", "NI", "UnAff")
+# updated Aug 2019
+europarties_2019 <- c("GUE/NGL", "G/EFA", "S&D", "RE","EPP", "ECR", "ID", "NI")
 # shortened common names for readability
-europarties_2014_names <-c ("Eur. United Left - Nordic Green Left", "Greens / Eur. Free All.", "Socialists & Democrats",
-                            "All. of Liberals and Democrats", "Eur. People's Party (Chris. Democrats)", "Eur. Conservatives & Reformists", 
-                            "Euro. Freedom & Direct Democracy", "Nations & Freedom / Eur. All. of People's & Nations", "Non-Inscrits", "Unaffiliated")
-europarties_2019_names <- c("Eur. United Left - Nordic Green Left", "Greens / Eur. Free All.", "Socialists & Democrats",
-                            "All. of Liberals and Democrats", "Eur. People's Party (Chris. Democrats)", "Eur. Conservatives & Reformists", 
-                            "Euro. Freedom & Direct Democracy", "Nations & Freedom / Eur. All. of People's & Nations", "Non-Inscrits", "Unaffiliated")
+europarties_2014_names <-c ("Eur. United Left - Nordic Green Left", 
+                            "Greens / Eur. Free All.", "Socialists & Democrats", 
+                            "All. of Liberals and Democrats", 
+                            "Eur. People's Party (Chris. Democrats)", 
+                            "Eur. Conservatives & Reformists", 
+                            "Euro. Freedom & Direct Democracy", 
+                            "Nations & Freedom / Eur. All. of People's & Nations", 
+                            "Non-Inscrits", "Unaffiliated")
+europarties_2019_names <- c("Eur. United Left - Nordic Green Left",
+                            "Greens / Eur. Free All.", "Socialists & Democrats",
+                            "Renew Europe",
+                            "Eur. People's Party (Chris. Democrats)", 
+                            "Eur. Conservatives & Reformists", 
+                            "Identity and Democracy",
+                            "Non-Inscrits", "Unaffiliated")
 # extended names for formaility [use only as alternative representation]
 europarties_2014_names_ext <- c("Confederal Group of the European United Left - Nordic Green Left", "Group of the Greens/European Free Alliance",
                                 "Group of the Progressive Alliance of Socialists and Democrats in the European Parliament",
@@ -78,8 +95,9 @@ print(paste("Project Working Directory: ", getwd()))
 
 # import all country CSVs into one big list of tibbles (data frames)
 import_path_prefix <- "datasets/"
-# init list to store data frames and iterate over - warning: use these lines when rerunning code to avoid duplicates
-polls_by_ctry_list <- results_by_ctry_list <- summary_by_country <- parties_by_country <- parties <- list() # TODO:ASK is okay to init multiple vars like this or prefer extra line for each to explain var name / manipilate separately etc?
+# init list to store data frames of poll data and iterate over it by country - warning: run these lines every time you manipulate code to avoid duplicates
+### initializing multiple vars at once instead of an extra line for each variable. explaining variable functionality further below
+polls_by_ctry_list <- results_by_ctry_list <- summary_by_country <- parties_by_country <- parties <- list() 
 count <- 1 
 for(country_suffix in eu_country_codes){
   # skips in case you want to exclude a certain data frame not currently present (in proper format) in folder 
@@ -87,26 +105,27 @@ for(country_suffix in eu_country_codes){
     count <- count + 1
     # add "-N" or "-E" before ".csv" for national or european subtables
     import_path_polls <- paste(import_path_prefix, "eopaod-master/docs/", country_suffix, ".csv", sep = "")
+      # VARNAME: polls_by_ctry_list # A list of lists containng poll data for each country
     # using readr::read_csv as a better version of read.csv () - caution: outputs tibble, which inherit from data.frame
-    # compact: c = char, i = int, n = num, d = dbl, l = bool, f = factor, D = date, T = date/time, t = time, ? = guess, _/- = skip col.
+    # alt. compact way to define column types: c = char, i = int, n = num, d = dbl, l = bool, f = factor, D = date, T = date/time, t = time, ? = guess, _/- = skip col.
     polls_by_ctry_list <- c(polls_by_ctry_list, lapply(import_path_polls, read_csv,  na = c("", "NA", "N.A.", "NaN", "Not Available"),
                                      col_types = cols(`Polling Firm` = col_factor(),
                                                       `Commissioners` = col_factor(),
                                                       `Scope` = col_factor(),
                                                       `Sample Size Qualification` = col_factor(),
-                                                      `Precision` = col_number(), # converts to char bec of '%'
+                                                      `Precision` = col_number(), # converts to char bec of '%' in the number
                                                       `Participation` = col_number()
                                        )))
-    # alternatively use the line below: read.csv(..., row.names = NULL) in order not to collide with 'cy.csv'
-    # data_list <- c(data_list,lapply(import_path, read.csv, row.names = NULL))
+    # alternatively use the line below: read.csv(..., row.names = NULL) in order not to collide with some files like 'cy.csv'
+    ## data_list <- c(data_list,lapply(import_path, read.csv, row.names = NULL))
     # TODO maybe add here as.data.frame([count])
-    #each data.frame gets the label of the respective country
+    # each data.frame gets the label of the respective country
     # names(data_list[[count]]) <- eu_country_codes[count+1] #+1 for ignoring Belgium
     print(paste("imported", names(eu_country_codes[count]), "from", import_path_polls)) #,"into", names(data_list[[count]])))
     
     
     import_path_results <-  paste(import_path_prefix, "eu_results/election_results/", country_suffix, ".csv", sep = "")
-    # official results from election-results.eu
+    # VARNAME: results_by_ctry_list # official results from election-results.eu
     results_by_ctry_list <- c(results_by_ctry_list, lapply(import_path_results, read_csv2,
                                                        col_types = cols(`GROUP_ID` = col_factor(),
                                                                         `SEATS_TOTAL` = col_number(),
