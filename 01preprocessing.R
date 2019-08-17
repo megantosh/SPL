@@ -100,72 +100,91 @@ print(paste("Project Working Directory: ", getwd()))
 
 # import all country CSVs from EOPaOD into one big list of tibbles (data frames)
 import_path_prefix <- "datasets/"
-# initializing list to store data frames of poll data and iterate over it by country 
+# initializing lists to store data frames of poll data and iterate over it by country 
 # init multiple vars at once instead of an extra line for each variable
 # explaining variable functionality further below with "VARNAME: <var>"
 polls_by_ctry_list <- results_by_ctry_list <- summary_by_country <- 
   parties_by_country <- parties <- list() 
+# VARNAME: static_data includes the consistent part of EOPaOD (i.e. excl. parties) 
+static_data <- data.frame()
 count <- 1 
 for(country_suffix in eu_country_codes){
   # skip data frames in EOPaOD folder not present in proper format
   if(!country_suffix %in% skipped_country_codes){
     count <- count + 1
+    # file path for EOPaOD polls
     # add "-N" or "-E" before ".csv" to load national or european results only
     import_path_polls <- paste(import_path_prefix, "eopaod-master/docs/", 
                                country_suffix, ".csv", sep = "")
-    # VARNAME: polls_by_ctry_list # A list of lists containng poll data for each country
+    # file path for Election Results
+    import_path_results <- paste(import_path_prefix, "eu_results/election_results/",
+                                 country_suffix, ".csv", sep = "")
+    
+    # VARNAME: polls_by_ctry_list is a list of lists with poll data for each country
     # using readr::read_csv as a better version of read.csv ()
     # alt. compact way to define column types: c, i, n, d, l, f, D, T, t, ?, _/-
-    polls_by_ctry_list <- c(polls_by_ctry_list, lapply(import_path_polls, read_csv,  na = c("", "NA", "N.A.", "NaN", "Not Available"),
-                                     col_types = cols(`Polling Firm` = col_factor(),
-                                                      `Commissioners` = col_factor(),
-                                                      `Scope` = col_factor(),
-                                                      `Sample Size Qualification` = col_factor(),
-                                                      `Precision` = col_number(), # converts to char bec of '%' in the number
-                                                      `Participation` = col_number()
-                                       )))
-    # alternatively use the line below: read.csv(..., row.names = NULL) in order not to collide with some files like 'cy.csv'
-    ## data_list <- c(data_list,lapply(import_path, read.csv, row.names = NULL))
-    # TODO maybe add here as.data.frame([count])
-    # each data.frame gets the label of the respective country
-    # names(data_list[[count]]) <- eu_country_codes[count+1] #+1 for ignoring Belgium
-    print(paste("imported", names(eu_country_codes[count]), "from", import_path_polls)) #,"into", names(data_list[[count]])))
+    polls_by_ctry_list <- c(
+      polls_by_ctry_list, lapply(import_path_polls, read_csv, 
+                                 na = c("", "NA", "N.A.", "NaN", "Not Available"),
+                                 col_types = cols(
+                                   `Polling Firm` = col_factor(),
+                                   `Commissioners` = col_factor(),
+                                   `Scope` = col_factor(),
+                                   `Sample Size Qualification` = col_factor(),
+                                   # converts to char bec of '%' in the number
+                                   `Precision` = col_number(), 
+                                   `Participation` = col_number()
+                                   )
+                                 )
+      )
+    # alternatively use read.csv(..., row.names = NULL) in order not to
+    #               collide with some files like 'cy.csv'
+    print(paste(
+      "imported", names(eu_country_codes[count]), "from", import_path_polls)) 
     
-    
-    import_path_results <-  paste(import_path_prefix, "eu_results/election_results/", country_suffix, ".csv", sep = "")
-    # VARNAME: results_by_ctry_list # official results from election-results.eu
-    results_by_ctry_list <- c(results_by_ctry_list, lapply(import_path_results, read_csv2,
-                                                       col_types = cols(`GROUP_ID` = col_factor(),
-                                                                        `SEATS_TOTAL` = col_number(),
-                                                                        `SEATS_PERCENT_EU` = col_number(),
-                                                                        `UPDATE_STATUS` = col_factor(),
-                                                                        `UPDATE_TIME` = col_datetime()  
-                                                                        )))
-  
+    # VARNAME: results_by_ctry_list has official results from election-results.eu
+    results_by_ctry_list <- c(
+      results_by_ctry_list, lapply(import_path_results, read_delim,
+                                   delim = ";",
+                                   col_types = cols(
+                                     `GROUP_ID` = col_factor(),
+                                     `SEATS_TOTAL` = col_number(),
+                                     `SEATS_PERCENT_EU` = col_number(),
+                                     `UPDATE_STATUS` = col_factor(),
+                                     `UPDATE_TIME` = col_datetime()
+                                   )
+      )
+    )
   }
 }
+# each tibble gets the label of the respective country
 names(polls_by_ctry_list) <- eu_country_codes[!eu_country_codes %in% skipped_country_codes]
-count <- NULL #reset counter to avoid errors in reruns
-static_data <- data.frame()
+names(results_by_ctry_list) <- eu_country_codes[!eu_country_codes %in% skipped_country_codes]
+#reset counter to avoid errors in reruns
+count <- NULL
 
-# extract first part of the tibble (common part accross all CSVs) into summary_by_country
+# VARNAME: summary_by_country extracts first part of the tibble (common part accross all CSVs) 
 # extract second part of the tibble (parties-dependent part) into parties_by_country
 # add country code in first row in both structures
 for(country_suffix in eu_country_codes){
   if(!country_suffix %in% skipped_country_codes){
-    print(paste("split tables for", toupper(names(eu_country_codes[eu_country_codes==country_suffix]))))
+    print(paste("split tables for", names(eu_country_codes[eu_country_codes==country_suffix])))
     summary_by_country[[country_suffix]] <- polls_by_ctry_list[[country_suffix]][1:9]
-    summary_by_country[[country_suffix]] <- add_column(summary_by_country[[country_suffix]], country = country_suffix, .before = 1)
-    summary_by_country[[country_suffix]] <- add_column(summary_by_country[[country_suffix]], duration =
-                                                         summary_by_country[[country_suffix]]$`Fieldwork End` 
-                                                       - summary_by_country[[country_suffix]]$`Fieldwork Start`, .before = 6)
+    summary_by_country[[country_suffix]] <- add_column(summary_by_country[[country_suffix]], 
+                                                       country = country_suffix, .before = 1)
+    summary_by_country[[country_suffix]] <- add_column(
+      summary_by_country[[country_suffix]],
+      duration = summary_by_country[[country_suffix]]$`Fieldwork End` 
+      - summary_by_country[[country_suffix]]$`Fieldwork Start`, .before = 6)
     # Toggle show/hide
-    # print(str(summary_by_country[[country_suffix]]))
-    static_data <- rbind(static_data, summary_by_country[[country_suffix]]) # consolidate static part to generate one big data.frame
+    ## print(str(summary_by_country[[country_suffix]]))
+    # consolidate static part to generate one big data.frame
+    static_data <- rbind(static_data, summary_by_country[[country_suffix]])
     
-
-    parties_by_country[[country_suffix]] <- polls_by_ctry_list[[country_suffix]][-(1:9)] # TODO:ASK as.data.frame is overriden. why?
-    parties_by_country[[country_suffix]] <- add_column(parties_by_country[[country_suffix]], country = country_suffix, .before = 1)
+    # VARNAME: parties_by_country extracts the second part of the tibble (parties-dependent part)
+    parties_by_country[[country_suffix]] <- polls_by_ctry_list[[country_suffix]][-(1:9)]
+    parties_by_country[[country_suffix]] <- add_column(parties_by_country[[country_suffix]],
+                                                       country = country_suffix, .before = 1)
     #TODO:ASK: use instead: lapply(data_list[[country_suffix]], add_column, parties_by_country[[country_suffix]], country = country_suffix)
     parties_by_country[[country_suffix]] <- lapply(parties_by_country[[country_suffix]], gsub, pattern = "%", replacement='' ) # remove "%"
     #TODO: Produces warning inside file: NAs introduced by coercion - outside it produces error?
