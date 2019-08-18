@@ -109,7 +109,7 @@ import_path_prefix <- "datasets/"
 # VARNAME: parties is a list of parties in each country
 polls_by_ctry_list <- results_by_ctry_list <-
   summary_by_country <- parties_by_country <- parties <- list() 
-# VARNAME: eopaod_static_data is a tibble with all countries' static data
+# VARNAME: eopaod_static_data has all countries' non-party-dependent statistics
 # it is more logical to split data here for preprocessing then add it by country 
 # in '02description.R'. Otherwise, we would have to put all parties from each 
 # country altogether in one huge table rendering it less descriptive 
@@ -173,7 +173,6 @@ names(results_by_ctry_list) <-
 #reset counter to avoid errors in reruns
 count <- NULL
 
-# initialize parties_by_ctry_list and eopaod_static_data via polls_by_ctry_list
 # add country code in first row in both structures
 for(country_suffix in eu_country_codes) {
   if(!country_suffix %in% skipped_country_codes) {
@@ -211,6 +210,7 @@ for(country_suffix in eu_country_codes) {
       parties_by_country[[country_suffix]][-1], as.numeric)
     # Toggle show/hide
     # writeLines(paste("\n", str(parties_by_country[[country_suffix]]), "\n"))
+    
     # initialize parties
     parties[[country_suffix]] <- names(parties_by_country[[country_suffix]])
     
@@ -223,19 +223,13 @@ for(country_suffix in eu_country_codes) {
     
   }
 }
-
-
-
-
-
-
-
-# ---- polls by country heya el mosta2bal..hanboss f eopaod_static_data w nesalla7 fel etnein
-
-# check eopaod_static_data for anomalies / errors then correct them in both ------------------------------------
-## eopaod_static_data contains the non-party-dependent statistics of all entries from all Member States
-
 eopaod_static_data$country <- factor(eopaod_static_data$country)
+
+
+
+# check eopaod_static_data for anomalies / errors -----------------------------
+# if necessary, correct them in eopaod_static_data and polls_by_ctry 
+
 
 # correct $duration------------------------------------------------------------
 min(eopaod_static_data$duration)
@@ -258,110 +252,55 @@ eopaod_static_data[eopaod_static_data$duration < 0, ][4,]$`Fieldwork End` <-
 eopaod_static_data$duration <- 
   eopaod_static_data$`Fieldwork End` - eopaod_static_data$`Fieldwork Start`
 
-
-
 # examine commisioners
-# TODO check for synonyms if necessary - details in paper
+# TODO is there a need to remove synonyms? e.g. 'Median' and 'Medián'
 
 
 
 
-
-
-# stats -------------------------------------------------------------
-
-str(eopaod_static_data)
-summary(eopaod_static_data)
-
-# variables to use in graphs later
-polling_firms_summary <- summary(eopaod_static_data$`Polling Firm`)
-commissioners_summary <- summary(eopaod_static_data$Commissioners)
-
-
-min(eopaod_static_data$`Sample Size`, na.rm = TRUE)
-max(eopaod_static_data$`Sample Size`, na.rm = TRUE)
-median(eopaod_static_data$`Sample Size`, na.rm = TRUE)
-mean(eopaod_static_data$`Sample Size`, na.rm = TRUE)
-
-nos_by_country <-summary(eopaod_static_data$country)
-
-# most recent start date
-max(eopaod_static_data$`Fieldwork Start`)
-eopaod_static_data %>%
-  arrange(desc(`Fieldwork Start`))
-
-  #oldest start date
-min(eopaod_static_data$`Fieldwork Start`)
-eopaod_static_data %>%
-  arrange((`Fieldwork Start`))#2017 not 2018!
-
-eopaod_static_data %>%
-  arrange(desc(duration))
-
-eopaod_static_data %>%
-  arrange((duration))
-
-
-
-#TODO reveal the NAs and find a reason / workaround ------------------------------------------------
+# reveal special cases of NAs and find a reason / workaround ------------------
 
 ## Germany
 #TODO flag if CDU/CSU is joined?
 for(i in 1 : length(parties_by_country$de$Union)){
-  if(is.na(parties_by_country$de$Union[i]) && ! is.na(parties_by_country$de$CDU[i])){
-    parties_by_country$de$Union[i] <- parties_by_country$de$CDU[i]
-  } else if(is.na(parties_by_country$de$Union[i]) && ! is.na(parties_by_country$de$CSU[i])){
-    parties_by_country$de$Union[i] <- parties_by_country$de$CSU[i]
+  if(is.na(parties_by_country$de$Union[i]) && !is.na(parties_by_country$de$CDU[i])){
+    parties_by_country$de$Union[i] <- polls_by_ctry_list$de$Union[i] <- 
+      parties_by_country$de$CDU[i]
+  } else if(
+    is.na(parties_by_country$de$Union[i]) && ! is.na(parties_by_country$de$CSU[i])){
+     parties_by_country$de$Union[i] <- polls_by_ctry_list$de$Union[i] <-
+       parties_by_country$de$CSU[i]
   }
 }
  
-
-
-
-# assign europarties and political orientation ------------------------------------------------------
-# <div class="flourish-embed flourish-survey" data-src="visualisation/143818"></div><script src="https://public.flourish.studio/resources/embed.js"></script>
-# using a data.frame that contains lists for each cell
-# party_repr_in_eup <- list of vectors( , nrow = count_eu_countries)
-
-# europarties_2014_members <- (europarties_2014)
-# europarties_2014_members["GUE/NGL"] <-  c( NA, "NddA", NA, NA, NA, NA, NA, NA, NA, NA)
-# europarties_2014_members["bg"] <-  c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA)
-
-
-
-
-
-
-# party_political_aff <- left, right, etc -----------------------------------------------------------
-
-
-class(polls_by_ctry_list)
-str(polls_by_ctry_list)
-summary(polls_by_ctry_list)
-head(polls_by_ctry_list)
-tail(polls_by_ctry_list)
-View(polls_by_ctry_list)
-
-
-
+# VARNAME: meps_df has data of parties + cand. affiliations to respective europarty
 # Read XML into tables -------------
-# data adopted from: https://data.europa.eu/euodp/data/dataset/members-of-the-european-parliament - see: http://www.europarl.europa.eu/meps/en/full-list.html
-# purpose of this table is similar to http://www.europarl.europa.eu/meps/en/search/table or http://www.europarl.europa.eu/meps/en/search/chamber
-
-meps_df <- data.frame("mep_name"=character(), "mep_country"=factor(), "mep_europarty"=factor(), "mep_natparty"=factor(), stringsAsFactors = FALSE)# initialize the variable to store the MEPs
+# data adopted from: https://data.europa.eu/euodp/data/dataset/members-of-the-european-parliament 
+# see: http://www.europarl.europa.eu/meps/en/full-list.html
+# purpose of this table is similar to http://www.europarl.europa.eu/meps/en/search/table 
+# or http://www.europarl.europa.eu/meps/en/search/chamber
+# initialize variable to store the MEPs
+meps_df <- data.frame("mep_europarty"=factor(), "mep_country"=factor(),  "mep_natparty"=factor(), 
+                      "mep_name"=character(), "mep_weight"= numeric(), stringsAsFactors = TRUE)
+print("Parsing XML could take a while...")
 meps_xml <- read_xml("datasets/vars/meps.xml")
 for ( i in 1:length(xml_children(meps_xml))) {
   mep_added <- data.frame( 
-    mep_name = xml_text(xml_child(xml_child(meps_xml, i), 1 )),
-    mep_country = xml_text(xml_child(xml_child(meps_xml, i), 2 )), # needs to match a code in names(eu_country_Code)
     mep_europarty = xml_text(xml_child(xml_child(meps_xml, i), 3 )), # needs to match a europarty
+    mep_country = xml_text(xml_child(xml_child(meps_xml, i), 2 )), # needs to match a code in names(eu_country_Code)
     mep_natparty = xml_text(xml_child(xml_child(meps_xml, i), 5 )), # needs to match a national party / or be other!
-    stringsAsFactors = FALSE)
+    mep_name = xml_text(xml_child(xml_child(meps_xml, i), 1 )),
+    mep_weight = 1,
+    stringsAsFactors = TRUE)
   meps_df <- rbind(meps_df, mep_added)
   mep_added <- NULL
 }
-meps_df[] <- lapply(meps_df[], function(x) type.convert(as.factor(x)))
 meps_df$mep_name <- as.character(meps_df$mep_name)
+# use line below in case stringsAsFactors needs to be set to FALSE
+## meps_df[] <- lapply(meps_df[], function(x) type.convert(as.factor(x)))
+
+
+
 
 # TODO: Performance - data frame is not as good as matrix, for loop is worse than sapply. altogether taking here about 16 sec!
 
@@ -412,6 +351,20 @@ meps_df$mep_name <- as.character(meps_df$mep_name)
 
 
 
+
+
+
+
+# assign europarties and political orientation ------------------------------------------------------
+# <div class="flourish-embed flourish-survey" data-src="visualisation/143818"></div><script src="https://public.flourish.studio/resources/embed.js"></script>
+# using a data.frame that contains lists for each cell
+# party_repr_in_eup <- list of vectors( , nrow = count_eu_countries)
+
+# europarties_2014_members <- (europarties_2014)
+# europarties_2014_members["GUE/NGL"] <-  c( NA, "NA", NA, NA, NA, NA, NA, NA, NA, NA)
+# europarties_2014_members["bg"] <-  c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA)
+
+# party_political_aff <- left, right, etc -----------------------------------------------------------
 
 
 
@@ -499,9 +452,9 @@ meps_df$mep_name <- as.character(meps_df$mep_name)
 
 
 
-
-comparison_countries <- c("at", "de", "fr", "it")
-comparison_df <- data.frame()
+# 
+## comparison_countries <- c("at", "de", "fr", "it")
+## comparison_df <- data.frame()
 
 
 
